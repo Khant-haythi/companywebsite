@@ -1,0 +1,238 @@
+{% extends "myINT/layout.html" %}
+{% load static %}
+
+{% block title %}Home Page{% endblock %}
+{% load static %}
+
+<style>
+  @media (max-width: 768px) {
+    .vision-mission-box {
+      transform: scale(0.75);
+      transform-origin: top left;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .vision-mission-box {
+      transform: scale(0.90);
+    }
+  }
+</style>
+
+{% block background %} 
+<!-- Background Video -->
+<div class="absolute inset-0 w-full h-full ">
+  <video 
+    autoplay 
+    loop 
+    muted 
+    class="w-[1500px]  h-[750px]  object-cover ">
+    <source src="{% static 'myINT/videos/LoopiNT.mp4' %}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+  <!-- Content Overlay -->
+  <div class="absolute inset-x-0 top-[87%] -translate-y-[50%] z-10 overflow-x-auto">
+    <!-- Heading -->
+    <div class="text-center text-white text-xl md:text-xl sm:text-base font-bold font-['Poppins'] leading-normal">TRUSTED TECHNOLOGY PARTNERS</div>
+
+    <!-- Logo Container -->
+    <div class="md:w-[683px]  h-16 relative bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl overflow-x-auto mx-auto mt-3">
+      <div class="absolute left-[40px] top-[2px] inline-flex justify-start items-center gap-9">
+        <!-- Logos -->
+        <div class="flex gap-7 shrink-0">
+          <img class="w-24 h-16" src="{% static 'myINT/images/Dell_EMC_logo.svg.svg' %}" alt="Dell EMC" />
+          <img class="w-24 h-16" src="{% static 'myINT/images/Juniper_Networks-Logo.wine.svg' %}" alt="Juniper" />
+          <img class="w-24 h-16" src="{% static 'myINT/images/Veritas_Technologies_logo.svg.svg' %}" alt="Veritas" />
+          <img class="w-24 h-16" src="{% static 'myINT/images/Nutanix-Logo.wine.svg' %}" alt="Nutanix" />
+          <img class="w-24 h-16" src="{% static 'myINT/images/PaloAltoNetworks_2020_Logo.svg.svg' %}" alt="Palo Alto Networks" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+{% endblock %}
+
+
+{% block content %}
+    <!-- Home Section -->
+  <section id="home" class="py-16">
+  <div class="flex flex-col sm:flex-row md:flex-row justify-start items-stretch sm:items-center gap-7">
+
+    <!-- Card 1: In Order To -->
+    <div class="w-96 h-96 relative rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 backdrop-blur-[2px] overflow-hidden">
+      <div class="p-4 flex flex-col gap-2.5">
+        <img class="w-36 h-36" src="{% static 'myINT/images/Earth_Icon.png' %}" />
+       <div class="w-[237px] justify-start text-zinc-900 text-lg font-normal font-['Poppins'] leading-normal">In order to deliver innovative and cost-effective business technology solutions to our customers,<br/>we’ve established number of long-term global relationships with leading industry partners</div>
+          
+      </div>
+    </div>
+
+    <!-- Card 2: We Offer -->
+    <div class="w-96 h-96 relative rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 backdrop-blur-[2px] overflow-hidden">
+      <div class="p-4 flex flex-col gap-2.5">
+        <img class="w-36 h-36" src="{% static 'myINT/images/WeOffer_Icon.png' %}" />
+        <div class="text-zinc-900 text-xl font-bold font-['Poppins'] leading-normal">WE OFFER</div>
+        <div class="w-[271px] text-zinc-900 text-lg font-normal font-['Poppins'] leading-normal">
+           innovative technology solutions and <br/>
+          managed services to accelerate <br/>
+          our customer business’s growth.<br/>
+          We simplify technology,<br/>
+          optimized the cost<br/>
+          and enable your business growth.
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: We Are -->
+     <div class="w-96 h-96 relative rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 backdrop-blur-[2px] overflow-hidden">
+      <div class="p-4 flex flex-col gap-2.5">
+        <img class="w-36 h-36" src="{% static 'myINT/images/WeAre_Icon.png' %}" />
+        <div class="text-zinc-900 text-xl font-bold font-['Poppins'] leading-normal">WE ARE</div>
+        <div class="w-[271px] text-zinc-900 text-lg font-normal font-['Poppins'] leading-normal">
+          innovative technology solutions and <br/>
+          managed services to accelerate <br/>
+          our customer business’s growth.<br/>
+          We simplify technology,<br/>
+          optimized the cost<br/>
+          and enable your business growth.
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="mt-24">
+
+  </div>
+  
+ <!-- Desktop Version (only shown on lg+) -->
+<div class="hidden lg:block relative w-full h-[377px]">
+  <div style="width: 100%; height: 100%; position: relative; box-shadow: 0px 0px 0px; filter: blur(0px)">
+    <div style="width: 1170px; height: 377px; left: 0px; top: 0px; position: absolute; border-radius: 50px; border: 2px #005B95 solid"></div>
+    <div style="width: 312px; left: 100px; top: 160px; position: absolute; color: #1C1C1C; font-size: 20px; font-family: Poppins; font-weight: 400; line-height: 30px; word-wrap: break-word">To develop world class solutions<br/>and services to our ​customers<br/>and ensure they stay as market leaders<br/>in the business​</div>
+    <div style="width: 212px; left: 858px; top: 160px; position: absolute; text-align: right; color: #1C1C1C; font-size: 20px; font-family: Poppins; font-weight: 400; line-height: 30px; word-wrap: break-word">Value for clients<br/>by innovation and <br/>continuous adoption​</div>
+    <div style="width: 168px; height: 50px; left: 91px; top: 45px; position: absolute; color: #1C1C1C; font-size: 48px; font-family: Poppins; font-weight: 500; line-height: 60px; word-wrap: break-word">VISION</div>
+    <div style="width: 151px; height: 0px; left: 63px; top: 110px; position: absolute; background: #1C1C1C; outline: 2px rgba(0, 92, 149, 0.80) solid; outline-offset: -1px"></div>
+    <div style="width: 218px; height: 48px; left: 872px; top: 45px; position: absolute; color: #1C1C1C; font-size: 48px; font-family: Poppins; font-weight: 500; line-height: 60px; word-wrap: break-word">MISSION</div>
+    <div style="width: 108px; height: 0px; left: 962px; top: 110px; position: absolute; background: linear-gradient(132deg, #005B95 0%, #00A1FF 100%); outline: 2px rgba(0, 92, 149, 0.80) solid; outline-offset: -1px"></div>
+    <img style="width: 235.73px; height: 307px; left: 467.63px; top: 35px; position: absolute" src="{% static 'myINT/images/unnamed 1.svg' %}" />
+  </div>
+</div>
+
+<!-- Mobile Version (stacked layout) -->
+<div class="block lg:hidden p-6 bg-white/10 rounded-3xl backdrop-blur-md mx-4 my-8 border-2 border-[#005B95] ">
+  <!-- VISION -->
+  <h2 class="text-3xl font-bold text-black mb-2">VISION</h2>
+  <div class="mb-6 h-1 w-full bg-gradient-to-r from-[#005B95] to-[#00A1FF]"></div>
+  <p class="text-base text-black mb-6">
+    To develop world class solutions and services to our customers and ensure they stay as market leaders in the business.
+  </p>
+
+  <!-- Image Centered -->
+  <img src="{% static 'myINT/images/unnamed 1.svg' %}" alt="Vision/Mission" class="w-[80%] sm:w-[60%] mx-auto mb-6 object-contain" />
+
+  <!-- MISSION -->
+  <h2 class="text-3xl font-bold text-black mb-2">MISSION</h2>
+  <div class="mb-6 h-1 w-full bg-gradient-to-r from-[#005B95] to-[#00A1FF]"></div>
+  <p class="text-base text-black">
+    Value for clients by innovation and continuous adoption.
+  </p>
+</div>
+</section>
+
+ <!-- SERVICE SESSION -->
+<section id="services" class="py-16">
+  <div class="w-[1170px] h-[1217px] relative">
+    <div class="left-[403px] top-0 absolute justify-start text-zinc-900 text-3xl font-medium font-['Poppins'] leading-10">SOLUTIONS &  SERVICES</div>
+    <div class="w-[770px] h-0 left-[204px] top-[65px] absolute outline outline-[3px] outline-offset-[-1.50px] outline-sky-800"></div>
+    <div class="left-0 top-[165px] absolute inline-flex justify-start items-center gap-7">
+        <div class="w-64 relative inline-flex flex-col justify-start items-start gap-5">
+            <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
+            <div class="self-stretch justify-start text-zinc-900 text-xl font-semibold font-['Poppins'] leading-10">Networking & Computing</div>
+            <div class="self-stretch justify-start text-zinc-900/80 text-base font-normal font-['Poppins'] leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
+            <div class="inline-flex justify-start items-center gap-2.5">
+                <div class="justify-start text-zinc-900 text-base font-medium font-['Poppins'] leading-10">Learn more</div>
+                <div class="w-2 h-3 bg-zinc-900"></div>
+            </div>
+            <img class="w-52 h-52 left-[30px] top-[18px] absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="https://placehold.co/209x209" />
+        </div>
+        <div class="w-64 relative inline-flex flex-col justify-start items-start gap-5">
+            <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
+            <div class="self-stretch justify-start text-zinc-900 text-xl font-semibold font-['Poppins'] leading-10">Cyber Security Solutions</div>
+            <div class="self-stretch justify-start text-zinc-900/80 text-base font-normal font-['Poppins'] leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
+            <div class="inline-flex justify-start items-center gap-2.5">
+                <div class="justify-start text-zinc-900 text-base font-medium font-['Poppins'] leading-10">Learn more</div>
+                <div class="w-2 h-3 bg-zinc-900"></div>
+            </div>
+            <img class="w-28 h-36 left-[75px] top-[47px] absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="https://placehold.co/119x152" />
+        </div>
+        <div class="w-64 relative inline-flex flex-col justify-start items-start gap-5">
+            <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
+            <div class="self-stretch justify-start text-zinc-900 text-xl font-semibold font-['Poppins'] leading-10">Cloud & Data Center</div>
+            <div class="self-stretch justify-start text-zinc-900/80 text-base font-normal font-['Poppins'] leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
+            <div class="inline-flex justify-start items-center gap-2.5">
+                <div class="justify-start text-zinc-900 text-base font-medium font-['Poppins'] leading-10">Learn more</div>
+                <div class="w-2 h-3 bg-zinc-900"></div>
+            </div>
+            <img class="w-64 h-52 left-[6px] top-[15px] absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="https://placehold.co/257x216" />
+        </div>
+        <div class="w-64 relative inline-flex flex-col justify-start items-start gap-5">
+            <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900"></div>
+            <div class="self-stretch justify-start text-zinc-900 text-xl font-semibold font-['Poppins'] leading-10">Application Solutions</div>
+            <div class="self-stretch justify-start text-zinc-900/80 text-base font-normal font-['Poppins'] leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
+            <div class="inline-flex justify-start items-center gap-2.5">
+                <div class="justify-start text-zinc-900 text-base font-medium font-['Poppins'] leading-10">Learn more</div>
+                <div class="w-2 h-3 bg-zinc-900"></div>
+            </div>
+            <img class="w-56 h-40 left-[26px] top-[43px] absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="https://placehold.co/231x159" />
+        </div>
+    </div>
+    <div class="left-0 top-[721px] absolute inline-flex justify-start items-center gap-7">
+        <div class="w-64 relative inline-flex flex-col justify-start items-start gap-5">
+            <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
+            <div class="self-stretch justify-start text-zinc-900 text-xl font-semibold font-['Poppins'] leading-10">Business Communication</div>
+            <div class="self-stretch justify-start text-zinc-900/80 text-base font-normal font-['Poppins'] leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
+            <div class="inline-flex justify-start items-center gap-2.5">
+                <div class="justify-start text-zinc-900 text-base font-medium font-['Poppins'] leading-10">Learn more</div>
+                <div class="w-2 h-3 bg-zinc-900"></div>
+            </div>
+            <img class="w-44 h-40 left-[48px] top-[43px] absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="https://placehold.co/173x159" />
+        </div>
+        <div class="w-64 relative inline-flex flex-col justify-start items-start gap-5">
+            <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
+            <div class="self-stretch justify-start text-zinc-900 text-xl font-semibold font-['Poppins'] leading-10">Business Communication</div>
+            <div class="self-stretch justify-start text-zinc-900/80 text-base font-normal font-['Poppins'] leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
+            <div class="inline-flex justify-start items-center gap-2.5">
+                <div class="justify-start text-zinc-900 text-base font-medium font-['Poppins'] leading-10">Learn more</div>
+                <div class="w-2 h-3 bg-zinc-900"></div>
+            </div>
+            <img class="w-44 h-40 left-[48px] top-[43px] absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="https://placehold.co/173x159" />
+        </div>
+        <div class="w-64 relative inline-flex flex-col justify-start items-start gap-5">
+            <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
+            <div class="self-stretch justify-start text-zinc-900 text-xl font-semibold font-['Poppins'] leading-10">Strategy & Consulting</div>
+            <div class="self-stretch justify-start text-zinc-900/80 text-base font-normal font-['Poppins'] leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
+            <div class="inline-flex justify-start items-center gap-2.5">
+                <div class="justify-start text-zinc-900 text-base font-medium font-['Poppins'] leading-10">Learn more</div>
+                <div class="w-2 h-3 bg-zinc-900"></div>
+            </div>
+            <img class="w-64 h-52 left-[10px] top-[18px] absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="https://placehold.co/250x210" />
+        </div>
+        <div class="w-64 relative inline-flex flex-col justify-start items-start gap-5">
+            <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
+            <div class="self-stretch justify-start text-zinc-900 text-xl font-semibold font-['Poppins'] leading-10">Application Solutions</div>
+            <div class="self-stretch justify-start text-zinc-900/80 text-base font-normal font-['Poppins'] leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
+            <div class="inline-flex justify-start items-center gap-2.5">
+                <div class="justify-start text-zinc-900 text-base font-medium font-['Poppins'] leading-10">Learn more</div>
+                <div class="w-2 h-3 bg-zinc-900"></div>
+            </div>
+            <img class="w-56 h-40 left-[20px] top-[44px] absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="https://placehold.co/230x158" />
+        </div>
+    </div>
+</div>
+
+
+</section>
+  
+{% endblock %}

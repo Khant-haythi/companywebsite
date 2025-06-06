@@ -1,0 +1,12 @@
+{
+  "name": "intwebstie",
+  "version": "1.0.0",
+  "description": "This sample repo contains the recommended structure for a Python Django project. In this sample, we use `django` to build a web application and the `unittest` to run tests.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
