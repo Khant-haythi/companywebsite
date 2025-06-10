@@ -1,0 +1,306 @@
+{% extends 'myINT/layout.html' %}
+
+<!-- templates/blog.html -->
+ <script>
+    // Toggle dropdown visibility
+    const toggleBtn = document.getElementById('dropdown-toggle');
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    const dropdownIcon = document.getElementById('dropdown-icon');
+
+    toggleBtn.addEventListener('click', () => {
+        const isVisible = dropdownMenu.classList.contains('hidden');
+        if (isVisible) {
+            dropdownMenu.classList.remove('hidden');
+            dropdownIcon.classList.add('rotate-180');
+        } else {
+            dropdownMenu.classList.add('hidden');
+            dropdownIcon.classList.remove('rotate-180');
+        }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!toggleBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+            dropdownMenu.classList.add('hidden');
+            dropdownIcon.classList.remove('rotate-180');
+        }
+    });
+
+    // Filter blog cards by category
+    document.querySelectorAll('.dropdown-item').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const selectedCategory = this.getAttribute('data-category');
+            filterBlogs(selectedCategory);
+        });
+    });
+
+    function filterBlogs(category) {
+        const cards = document.querySelectorAll('.blog-card');
+        cards.forEach(card => {
+            if (category === 'All' || card.getAttribute('data-category') === category) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+    // Load more articles
+    document.getElementById('load-more-btn').addEventListener('click', function () {
+        const hiddenArticles = document.querySelector('.hidden-articles');
+        const btn = this;
+        hiddenArticles.style.display = 'block';
+        btn.style.display = 'none';
+    });
+</script>
+{% load static %}
+{% block title %}Blogs{% endblock %}
+
+{% block background %}
+<div class="w-[1440px] h-32 absolute bg-gradient-to-l from-white via-sky-800 to-neutral-200 overflow-hidden">
+</div>
+{% endblock %}
+
+{% block Page %}
+
+<div class="w-[1170px] h-28 relative mx-auto">
+    <div class="left-0 top-[15px] absolute justify-start text-zinc-900 text-4xl font-bold font-Poppins leading-10">Blogs</div>
+    <div class="w-[459px] px-10 py-3.5 left-[356px] top-0 absolute rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-zinc-900/60 inline-flex justify-between items-center">
+        <div class="justify-start text-stone-600/80 text-xl font-normal font-['Poppins'] leading-10">Search something</div>
+        <img class="w-6 h-6 " src="{% static 'myINT/images/Search.svg' %}"/>
+    </div>
+    <div class="w-[1170px] mx-auto  left-0 top-[110px] absolute outline outline-[0.50px] outline-offset-[-0.25px] outline-zinc-900/60"></div>
+   
+   <!-- Dropdown Button -->
+<div class="absolute left-[951px] top-[5px] w-48 mx-auto" x-data="{ open: false }">
+  <!-- Toggle Button -->
+  <button 
+    @click="open = !open"
+    class="w-full px-4 py-1.5 rounded-[30px] outline outline-[0.50px] outline-offset-[-0.50px] outline-zinc-900/60 flex justify-between items-center bg-white"
+    type="button"
+  >
+    <span class="text-zinc-900/80 text-xl font-normal font-poppins">Business</span>
+    <img class="w-5 h-3 transition-transform duration-200" :class="{ 'rotate-180': open }" src="{% static 'myINT/images/Vector 5.svg' %}" alt="Dropdown Icon" />
+  </button>
+
+  <!-- Dropdown Menu -->
+  <div 
+    x-show="open"
+    x-transition
+    class="mt-2 absolute right-0 w-48 rounded-[10px] shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10"
+    style="display: none;"
+  >
+    <div class="py-1">
+                <a href="#" data-category="All" class="dropdown-item block px-4 py-2 text-sm text-zinc-700 hover:bg-gray-100">All</a>
+                <a href="#" data-category="Business" class="dropdown-item block px-4 py-2 text-sm text-zinc-700 hover:bg-gray-100">Business</a>
+                <a href="#" data-category="Technology" class="dropdown-item block px-4 py-2 text-sm text-zinc-700 hover:bg-gray-100">Technology</a>
+                <a href="#" data-category="Science" class="dropdown-item block px-4 py-2 text-sm text-zinc-700 hover:bg-gray-100">Science</a>
+                <a href="#" data-category="Finance" class="dropdown-item block px-4 py-2 text-sm text-zinc-700 hover:bg-gray-100">Finance</a>
+                <a href="#" data-category="Art" class="dropdown-item block px-4 py-2 text-sm text-zinc-700 hover:bg-gray-100">Art</a>
+    </div>
+  </div>
+</div>
+</div>
+    <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10">
+    <!-- Blog Card -->
+    <div class="flex flex-col gap-4">
+      <div class="relative">
+        <img class="self-stretch h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/navidia.svg' %}" alt="Nvidia Blog" />
+        <div class="absolute top-5 left-5 flex gap-4">
+          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Business</span>
+          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
+        </div>
+      </div>
+      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
+        <p class="mt-2">May 26, 2025</p>
+        <div class="flex items-center gap-2">
+          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
+          <p>7.8k</p>
+        </div>
+      </div>
+      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+        Oracle to buy $40 billion of Nvidia chips for OpenAI’s US data center, FT reports
+      </h3>
+    </div>
+     <div class="flex flex-col gap-4">
+      <div class="relative">
+        <img class="self-stretch h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/navidia.svg' %}" alt="Nvidia Blog" />
+        <div class="absolute top-5 left-5 flex gap-4">
+          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Business</span>
+          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
+        </div>
+      </div>
+      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
+        <p class="mt-2">May 26, 2025</p>
+        <div class="flex items-center gap-2">
+          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
+          <p>7.8k</p>
+        </div>
+      </div>
+      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+       Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
+      </h3>
+    </div>
+     <div class="flex flex-col gap-4">
+      <div class="relative">
+        <img class="self-stretch h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/navidia.svg' %}" alt="Nvidia Blog" />
+        <div class="absolute top-5 left-5 flex gap-4">
+          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Business</span>
+          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
+        </div>
+      </div>
+      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
+        <p class="mt-2">May 26, 2025</p>
+        <div class="flex items-center gap-2">
+          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
+          <p>7.8k</p>
+        </div>
+      </div>
+      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+       OpenAI to open office in Seoul amid growing demand for ChatGPT
+      </h3>
+    </div>
+     <div class="flex flex-col gap-4">
+      <div class="relative">
+        <img class="self-stretch h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/navidia.svg' %}" alt="Nvidia Blog" />
+        <div class="absolute top-5 left-5 flex gap-4">
+          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Business</span>
+          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
+        </div>
+      </div>
+      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
+        <p class="mt-2">May 26, 2025</p>
+        <div class="flex items-center gap-2">
+          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
+          <p>7.8k</p>
+        </div>
+      </div>
+      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+       Elon Musk says he’ll resume working ‘24/7/ at his companies, X outage mostly re-stored
+      </h3>
+    </div>
+
+    
+    
+   <!-- Hidden Articles -->
+<div class="hidden-articles" style="display: none;">
+    <!-- Article 5 -->
+    <div class="w-[570px] h-[464px] left-0 top-[988px] absolute z-10 mt-5">
+        <div class="w-[570px] left-0 top-0 absolute inline-flex flex-col justify-start items-start gap-3.5">
+            <img class="self-stretch h-80" src="{% static 'myINT/images/telegram.svg' %}" />
+            <div class="self-stretch flex flex-col justify-start items-start gap-5">
+                <div class="self-stretch inline-flex justify-between items-center">
+                    <div class="justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal mt-2">May 27, 2025</div>
+                    <div class="flex justify-start items-center gap-2">
+                        <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}"/>
+                        <div class="justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">6.3k</div>
+                    </div>
+                </div>
+                <div class="self-stretch justify-start text-zinc-900 text-2xl font-bold font-Poppins leading-9 mt-[-20px]">
+                   Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
+                </div>
+            </div>
+            <div class="px-4 py-2.5 left-[40px] top-[20px] absolute rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-white inline-flex justify-center items-center gap-2.5">
+                <div class="justify-start text-white text-base font-normal font-Poppins leading-normal">Art</div>
+            </div>
+            <div class="px-4 py-2.5 left-[168px] top-[20px] absolute rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-white inline-flex justify-center items-center gap-2.5">
+                <div class="justify-start text-white text-base font-normal font-Poppins leading-normal">Technology</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article 6 -->
+    <div class="w-[570px] h-[464px] left-[600px] top-[988px] absolute z-10 mt-5">
+        <div class="w-[570px] left-0 top-0 absolute inline-flex flex-col justify-start items-start gap-3.5">
+            <img class="self-stretch h-80" src="{% static 'myINT/images/telegram.svg' %}" />
+            <div class="self-stretch flex flex-col justify-start items-start gap-5">
+                <div class="self-stretch inline-flex justify-between items-center">
+                    <div class="justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal mt-2">May 28, 2025</div>
+                    <div class="flex justify-start items-center gap-2">
+                        <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}"/>
+                        <div class="justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">5.1k</div>
+                    </div>
+                </div>
+                <div class="self-stretch justify-start text-zinc-900 text-2xl font-bold font-Poppins leading-9 mt-[-20px]">
+                    Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
+                </div>
+            </div>
+            <div class="px-4 py-2.5 left-[40px] top-[20px] absolute rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-white inline-flex justify-center items-center gap-2.5">
+                <div class="justify-start text-white text-base font-normal font-Poppins leading-normal">Finance</div>
+            </div>
+            <div class="px-4 py-2.5 left-[168px] top-[20px] absolute rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-white inline-flex justify-center items-center gap-2.5">
+                <div class="justify-start text-white text-base font-normal font-Poppins leading-normal">Technology</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article 7 -->
+    <div class="w-[570px] h-[464px] left-0 top-[1452px] absolute z-10 mt-24">
+        <div class="w-[570px] left-0 top-0 absolute inline-flex flex-col justify-start items-start gap-3.5">
+            <img class="self-stretch h-80" src="{% static 'myINT/images/telegram.svg' %}" />
+            <div class="self-stretch flex flex-col justify-start items-start gap-5">
+                <div class="self-stretch inline-flex justify-between items-center">
+                    <div class="justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal mt-2">May 29, 2025</div>
+                    <div class="flex justify-start items-center gap-2">
+                        <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}"/>
+                        <div class="justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">4.7k</div>
+                    </div>
+                </div>
+                <div class="self-stretch justify-start text-zinc-900 text-2xl font-bold font-Poppins leading-9 mt-[-20px]">
+                    Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
+                </div>
+            </div>
+            <div class="px-4 py-2.5 left-[40px] top-[20px] absolute rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-white inline-flex justify-center items-center gap-2.5">
+                <div class="justify-start text-white text-base font-normal font-Poppins leading-normal">Gaming</div>
+            </div>
+            <div class="px-4 py-2.5 left-[168px] top-[20px] absolute rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-white inline-flex justify-center items-center gap-2.5">
+                <div class="justify-start text-white text-base font-normal font-Poppins leading-normal">Technology</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article 8 -->
+    <div class="w-[570px] h-[464px] left-[600px] top-[1452px] absolute z-10 mt-24">
+        <div class="w-[570px] left-0 top-0 absolute inline-flex flex-col justify-start items-start gap-3.5">
+            <img class="self-stretch h-80 " src="{% static 'myINT/images/telegram.svg' %}" />
+            <div class="self-stretch flex flex-col justify-start items-start gap-5">
+                <div class="self-stretch inline-flex justify-between items-center">
+                    <div class="justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal mt-2">May 30, 2025</div>
+                    <div class="flex justify-start items-center gap-2">
+                        <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}"/>
+                        <div class="justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">5.9k</div>
+                    </div>
+                </div>
+                <div class="self-stretch justify-start text-zinc-900 text-2xl font-bold font-Poppins leading-9 mt-[-20px]">
+                   Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
+                </div>
+            </div>
+            <div class="px-4 py-2.5 left-[40px] top-[20px] absolute rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-white inline-flex justify-center items-center gap-2.5">
+                <div class="justify-start text-white text-base font-normal font-Poppins leading-normal">Science</div>
+            </div>
+            <div class="px-4 py-2.5 left-[168px] top-[20px] absolute rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-white inline-flex justify-center items-center gap-2.5">
+                <div class="justify-start text-white text-base font-normal font-Poppins leading-normal">Technology</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="load-more-btn" class="px-10 py-3 left-[459px] top-[1048px] absolute rounded-[50px] outline outline-1 outline-offset-[-1px] outline-zinc-900 inline-flex justify-center items-center gap-2.5 cursor-pointer">
+        <div class="justify-start text-zinc-900 text-xl font-normal font-Poppins leading-normal">Load More Article</div>
+    </div>
+</div>
+<!-- JavaScript to show hidden articles on click -->
+<script>
+    document.getElementById('load-more-btn').addEventListener('click', function () {
+        const hiddenArticles = document.querySelector('.hidden-articles');
+        const btn = this;
+
+        // Show the extra articles
+        hiddenArticles.style.display = 'block';
+
+        // Hide the button
+        btn.style.display = 'none';
+    });
+</script>
+
+{% endblock %}

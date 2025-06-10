@@ -1,5 +1,5 @@
 {% extends "myINT/layout.html" %}
-{% load static %}
+
 
 {% block title %}Home Page{% endblock %}
 {% load static %}
@@ -21,6 +21,7 @@
 </style>
 
 {% block background %} 
+
 <!-- Background Video -->
 <div class="absolute inset-0 w-full h-full ">
   <video 
@@ -33,25 +34,26 @@
   </video>
 </div>
 
-  <!-- Content Overlay -->
-  <div class="absolute inset-x-0 top-[91%] -translate-y-[50%] z-10 overflow-x-auto">
+   <!-- Content Overlay -->
+  <div class="absolute inset-x-0 bottom-6 z-10 px-4">
     <!-- Heading -->
-    <div class="text-center text-white text-xl md:text-xl sm:text-base font-bold font-Poppins leading-normal">TRUSTED TECHNOLOGY PARTNERS</div>
+    <div class="text-center text-white text-base sm:text-lg md:text-xl font-bold font-Poppins leading-normal">
+      TRUSTED TECHNOLOGY PARTNERS
+    </div>
 
     <!-- Logo Container -->
-    <div class="md:w-[683px]  h-16 relative bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl overflow-x-auto mx-auto mt-3">
-      <div class="absolute left-[40px] top-[2px] inline-flex justify-start items-center gap-9">
-        <!-- Logos -->
-        <div class="flex gap-7 shrink-0">
-          <img class="w-24 h-16" src="{% static 'myINT/images/Dell_EMC_logo.svg.svg' %}" alt="Dell EMC" />
-          <img class="w-24 h-16" src="{% static 'myINT/images/Juniper_Networks-Logo.wine.svg' %}" alt="Juniper" />
-          <img class="w-24 h-16" src="{% static 'myINT/images/Veritas_Technologies_logo.svg.svg' %}" alt="Veritas" />
-          <img class="w-24 h-16" src="{% static 'myINT/images/Nutanix-Logo.wine.svg' %}" alt="Nutanix" />
-          <img class="w-24 h-16" src="{% static 'myINT/images/PaloAltoNetworks_2020_Logo.svg.svg' %}" alt="Palo Alto Networks" />
-        </div>
+    <div class="w-full max-w-[683px] h-16 relative bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl overflow-x-auto mx-auto mt-3 px-4">
+      <div class="flex items-center gap-6 py-2 min-w-max">
+        <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Dell_EMC_logo.svg.svg' %}" alt="Dell EMC" />
+        <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Juniper_Networks-Logo.wine.svg' %}" alt="Juniper" />
+        <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Veritas_Technologies_logo.svg.svg' %}" alt="Veritas" />
+        <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Nutanix-Logo.wine.svg' %}" alt="Nutanix" />
+        <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/PaloAltoNetworks_2020_Logo.svg.svg' %}" alt="Palo Alto Networks" />
       </div>
     </div>
   </div>
+</div>
+
   
 
 {% endblock %}
@@ -60,8 +62,8 @@
 {% block content %}
     <!-- Home Section -->
   <section id="home" class="py-16">
-  <div class="max-w-[1170px] mx-auto ">
-  <div class="mt-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
+  <div class="max-w-[1170px] mx-auto relative z-20 ">
+  <div class=" relative z-10 mt-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
 
   <!-- Card 1: In Order To -->
   <div class="flex-1 min-w-[280px] max-w-xl h-auto relative rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 backdrop-blur-[2px] overflow-hidden px-3">
@@ -463,14 +465,203 @@
         OpenAI to open office in Seoul amid growing demand for ChatGPT
       </h3>
     </div>
-  </div>
+  
+   <!-- Hidden Articles -->
+    <div id="hidden-articles" class="hidden">
 
+      <!-- Article 5 -->
+      <div class="blog-card flex flex-col gap-4" data-category="Art">
+        <div class="relative">
+          <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/telegram.svg' %}" alt="Telegram Blog" />
+          <div class="absolute top-5 left-5 flex gap-4">
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Art</span>
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
+          </div>
+        </div>
+        <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
+          <p class="mt-2">May 27, 2025</p>
+          <div class="flex items-center gap-2">
+            <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
+            <p>6.3k</p>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+          Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
+        </h3>
+      </div>
+
+      <!-- Article 6 -->
+      <div class="blog-card flex flex-col gap-4" data-category="Finance">
+        <div class="relative">
+          <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/telegram.svg' %}" alt="Telegram Blog" />
+          <div class="absolute top-5 left-5 flex gap-4">
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Finance</span>
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
+          </div>
+        </div>
+        <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
+          <p class="mt-2">May 28, 2025</p>
+          <div class="flex items-center gap-2">
+            <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
+            <p>5.1k</p>
+          </div>
+        </div>
+        <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+          Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
+        </h3>
+      </div>
+
+</div>
   <!-- Load More -->
-  <div class="flex justify-center mt-12">
-    <button class="px-10 py-3 rounded-[50px] outline outline-1 outline-zinc-900 text-zinc-900 text-xl font-normal font-poppins">
-      Load More Article
-    </button>
+  <div id="load-more-btn" class="mt-10 px-10 py-3 mx-auto max-w-max rounded-[50px] outline outline-1 outline-offset-[-1px] outline-zinc-900 justify-center cursor-pointer">
+    <div class="text-zinc-900 text-xl font-normal font-Poppins">Load More Article</div>
+  </div>
+</div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section id="TESTIMONIALS" class="py-16 max-w-screen-xl mx-auto px-4">
+  <div class="space-y-6">
+
+    <!-- Title + Divider -->
+    <div class="text-center space-y-2">
+      <h2 class="text-2xl sm:text-3xl md:text-3xl font-medium text-zinc-900 font-Poppins">TESTIMONIALS</h2>
+      <div class="w-full max-w-[480px] h-[3px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100 mx-auto"></div>
+    </div>
+
+    <!-- Description -->
+    <div class="w-[800px] mx-auto justify-start text-zinc-900 text-sm sm:text-base md:text-lg lg:text-xl font-normal font-Poppins leading-loose">We believe that our community speaks louder than any slaes pitch. Explore real stories and honest feedback from the people who matter most - our customers.</div>
+
+    <!-- Slider Container -->
+    <div class="relative mt-10">
+      <!-- Scrollable Cards -->
+      <div id="slider" class="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory gap-6 pb-4">
+        <!-- Card 1 -->
+       <div class="snap-start shrink-0 w-96 px-12 py-10 rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 inline-flex flex-col justify-start items-center gap-10">
+        <img class="self-stretch h-52 rounded-[50px]" src="{% static 'myINT/images/zayar.svg' %}" />
+        <div class="w-64 h-0 shadow-[1px_1px_5px_0px_rgba(255,255,255,0.25)] shadow-[-1px_-1px_5px_0px_rgba(255,255,255,0.25)] outline outline-1 outline-offset-[-0.50px] outline-sky-800"></div>
+        <div class="self-stretch text-center justify-start text-zinc-900 text-3xl font-medium font-Poppins leading-loose">Zayar</div>
+        <div class="self-stretch h-10 relative">
+            <div class="w-64 left-0 top-0 absolute text-center justify-start text-zinc-900 text-xl font-medium font-['Poppins'] leading-loose">Odoo</div>
+            <div class="w-52 h-0.5 left-[29.45px] top-[34px] absolute bg-[radial-gradient(ellipse_37.15%_821.12%_at_51.19%_25.00%,_#005C95_0%,_rgba(0,_92,_149,_0)_100%)] rounded-[50px]"></div>
+        </div>
+        <div class="self-stretch text-center justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">“We highly recommend iNT Solutions as a trusted advisor for businesses looking to maximize the value of Microsoft’s ecosystem.”</div>
+    </div>
+
+        <!-- Card 2 -->
+        <div class="snap-start shrink-0  w-96 px-12 py-10 rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 inline-flex flex-col justify-start items-center gap-10">
+          <img class="self-stretch h-52 rounded-[50px]" src="{% static 'myINT/images/chawsu.svg' %}" />
+          <div class="w-64 h-0 outline outline-1 outline-offset-[-0.50px] outline-sky-800"></div>
+          <div class="self-stretch text-center justify-start text-zinc-900 text-3xl font-medium font-Poppins leading-loose">Chaw Su</div>
+          <div class="self-stretch h-10 relative">
+              <div class="w-64 left-0 top-0 absolute text-center justify-start text-zinc-900 text-xl font-medium font-['Poppins'] leading-loose">Red Hat</div>
+              <div class="w-52 h-0.5 left-[29.45px] top-[34px] absolute bg-[radial-gradient(ellipse_37.15%_821.12%_at_51.19%_25.00%,_#005C95_0%,_rgba(0,_92,_149,_0)_100%)] rounded-[50px]"></div>
+          </div>
+          <div class="self-stretch text-center justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">“We highly recommend iNT Solutions as a trusted advisor for businesses looking to maximize the value of Microsoft’s ecosystem.”</div>
+      </div>
+        <!-- Card 3 -->
+        <div class="snap-start shrink-0 w-96 px-12 py-10 rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 inline-flex flex-col justify-start items-center gap-10">
+          <img class="self-stretch h-52 rounded-[50px]" src="{% static 'myINT/images/thiha.svg' %}" />
+          <div class="w-64 h-0 shadow-[1px_1px_5px_0px_rgba(255,255,255,0.25)] shadow-[-1px_-1px_5px_0px_rgba(255,255,255,0.25)] outline outline-1 outline-offset-[-0.50px] outline-sky-800"></div>
+          <div class="self-stretch text-center justify-start text-zinc-900 text-3xl font-medium font-Poppins leading-loose">Thiha</div>
+          <div class="self-stretch h-10 relative">
+              <div class="w-64 left-0 top-0 absolute text-center justify-start text-zinc-900 text-xl font-medium font-['Poppins'] leading-loose">Aya Pay</div>
+              <div class="w-52 h-0.5 left-[29.45px] top-[34px] absolute bg-[radial-gradient(ellipse_37.15%_821.12%_at_51.19%_25.00%,_#005C95_0%,_rgba(0,_92,_149,_0)_100%)] rounded-[50px]"></div>
+          </div>
+          <div class="self-stretch text-center justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">“We highly recommend iNT Solutions as a trusted advisor for businesses looking to maximize the value of Microsoft’s ecosystem.”</div>
+      </div>
+        <!-- Card 4 -->
+         <div class="snap-start shrink-0 w-96 px-12 py-10 rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 inline-flex flex-col justify-start items-center gap-10">
+          <img class="self-stretch h-52 rounded-[50px]" src="{% static 'myINT/images/thiha.svg' %}" />
+          <div class="w-64 h-0 shadow-[1px_1px_5px_0px_rgba(255,255,255,0.25)] shadow-[-1px_-1px_5px_0px_rgba(255,255,255,0.25)] outline outline-1 outline-offset-[-0.50px] outline-sky-800"></div>
+          <div class="self-stretch text-center justify-start text-zinc-900 text-3xl font-medium font-Poppins leading-loose">Thiha</div>
+          <div class="self-stretch h-10 relative">
+              <div class="w-64 left-0 top-0 absolute text-center justify-start text-zinc-900 text-xl font-medium font-Poppins leading-loose">Aya Pay</div>
+              <div class="w-52 h-0.5 left-[29.45px] top-[34px] absolute bg-[radial-gradient(ellipse_37.15%_821.12%_at_51.19%_25.00%,_#005C95_0%,_rgba(0,_92,_149,_0)_100%)] rounded-[50px]"></div>
+          </div>
+          <div class="self-stretch text-center justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">“We highly recommend iNT Solutions as a trusted advisor for businesses looking to maximize the value of Microsoft’s ecosystem.”</div>
+      </div>
+
+        <!-- Card 5 -->
+       <div class="snap-start shrink-0 w-96 px-12 py-10 rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 inline-flex flex-col justify-start items-center gap-10">
+          <img class="self-stretch h-52 rounded-[50px]" src="{% static 'myINT/images/thiha.svg' %}" />
+          <div class="w-64 h-0 shadow-[1px_1px_5px_0px_rgba(255,255,255,0.25)] shadow-[-1px_-1px_5px_0px_rgba(255,255,255,0.25)] outline outline-1 outline-offset-[-0.50px] outline-sky-800"></div>
+          <div class="self-stretch text-center justify-start text-zinc-900 text-3xl font-medium font-Poppins leading-loose">Thiha</div>
+          <div class="self-stretch h-10 relative">
+              <div class="w-64 left-0 top-0 absolute text-center justify-start text-zinc-900 text-xl font-medium font-Poppins leading-loose">Aya Pay</div>
+              <div class="w-52 h-0.5 left-[29.45px] top-[34px] absolute bg-[radial-gradient(ellipse_37.15%_821.12%_at_51.19%_25.00%,_#005C95_0%,_rgba(0,_92,_149,_0)_100%)] rounded-[50px]"></div>
+          </div>
+          <div class="self-stretch text-center justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">“We highly recommend iNT Solutions as a trusted advisor for businesses looking to maximize the value of Microsoft’s ecosystem.”</div>
+      </div>
+
+        </div>
+      </div>
+
+      <!-- Page Indicator Dots -->
+      <div class="flex justify-center mt-6 space-x-2">
+        <span class="dot active w-3 h-3 rounded-full bg-sky-700 cursor-pointer" data-index="0"></span>
+        <span class="dot w-3 h-3 rounded-full bg-sky-300 cursor-pointer" data-index="1"></span>
+        <span class="dot w-3 h-3 rounded-full bg-sky-300 cursor-pointer" data-index="2"></span>
+        <span class="dot w-3 h-3 rounded-full bg-sky-300 cursor-pointer" data-index="3"></span>
+        <span class="dot w-3 h-3 rounded-full bg-sky-300 cursor-pointer" data-index="4"></span>
+      </div>
+
+    </div>
   </div>
 </section>
 
+<style>
+  /* Hide scrollbar but allow scrolling */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>
+
+
+<script>
+  // Load more articles
+  document.getElementById('load-more-btn').addEventListener('click', function () {
+    const hiddenArticles = document.getElementById('hidden-articles');
+    const btn = this;
+    hiddenArticles.style.display = 'contents'; // or 'grid' / 'flex'
+    btn.style.display = 'none';
+  });
+
+  const slider = document.getElementById('slider');
+  const dots = document.querySelectorAll('.dot');
+
+  // Update dots when user scrolls
+  slider.addEventListener('scroll', () => {
+    const cardWidth = 96 * 4; // Tailwind w-96 is 24rem = ~384px
+    const index = Math.round(slider.scrollLeft / cardWidth);
+    
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('bg-sky-700', i === index);
+      dot.classList.toggle('bg-sky-300', i !== index);
+    });
+  });
+
+  // Optional: Click on dot to scroll
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const index = parseInt(dot.getAttribute('data-index'));
+      const cardWidth = 96 * 4;
+
+      slider.scrollTo({
+        left: index * cardWidth,
+        behavior: 'smooth'
+      });
+
+      dots.forEach(d => {
+        d.classList.remove('bg-sky-700');
+        d.classList.add('bg-sky-300');
+      });
+      dot.classList.add('bg-sky-700');
+    });
+  });
+</script>
 {% endblock %}
