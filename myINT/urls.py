@@ -7,7 +7,7 @@ from myINT.models import LogMessage
 urlpatterns = [
     path("", views.index, name="home"),
     path("home/", views.index, name="home"),
-    path('about/', views.about, name='about'),
+    path('blog/', views.blog, name='blog'),
    
 
 ]

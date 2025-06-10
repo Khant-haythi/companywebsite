@@ -12,5 +12,5 @@ def index(request):
     
     return render(request, "myINT/home.html")
 
-def about(request):
-    return render(request, 'myINT/about.html')
+def blog(request):
+    return render(request, 'myINT/blog.html')
