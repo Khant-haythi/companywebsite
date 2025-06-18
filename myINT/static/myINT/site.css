@@ -1,0 +1,13 @@
+.nav-link {
+  @apply text-white text-base font-medium font-Poppins leading-normal px-4 py-2 rounded-full transition-all duration-300;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  @apply bg-white/10;
+}
+
+/* Active Case Studies */
+.active-case-studies {
+  @apply bg-white text-sky-900 font-bold shadow-md;
+}

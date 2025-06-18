@@ -15,7 +15,7 @@
     <div class="text-zinc-900 text-4xl justify-start left-0 font-bold font-Poppins leading-10">Blogs</div>
 
     <!-- Search Bar -->
-    <div class=" w-full sm:w-[459px] px-10 py-4 ml-auto rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-zinc-900/60 inline-flex justify-between items-center">
+    <div class=" w-full sm:w-[459px] px-10 py-2 ml-auto rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-zinc-900/60 inline-flex justify-between items-center">
       <span class="text-stone-600/80 text-xl font-normal font-poppins">Search something</span>
       <img src="{% static 'myINT/images/Search.svg' %}" alt="Search" class="w-6 h-6" />
     </div>
@@ -47,16 +47,19 @@
  
   <!-- Blog Grid -->
   <div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-10">
+{% for blog in blogs %}
 
     <!-- Article 1 -->
-    <div class="blog-card flex flex-col gap-4" data-category="Business">
-      <div class="relative">
-        <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/navidia.svg' %}" alt="Nvidia Blog" />
-        <div class="absolute top-5 left-5 flex gap-4">
-          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-black bg-white text-base font-normal font-poppins">Business</span>
-          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
+    <div class="blog-card flex flex-col gap-4" data-category="{{ blog.categories.all.0.name }}">
+      <a href="{% url 'blog_detail' blog.id %}">
+        <div class="relative">
+          <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/navidia.svg' %}" alt="Nvidia Blog" />
+          <div class="absolute top-5 left-5 flex gap-4">
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-black bg-white text-base font-normal font-poppins">Business</span>
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
+          </div>
         </div>
-      </div>
+      </a>
       <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
         <p class="mt-2">May 26, 2025</p>
         <div class="flex items-center gap-2">
@@ -64,9 +67,11 @@
           <p>7.8k</p>
         </div>
       </div>
-      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-        Oracle to buy $40 billion of Nvidia chips for OpenAI’s US data center, FT reports
-      </h3>
+       <a href="{% url 'blog_detail' blog.id %}">
+          <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+            {{ blog.title }}
+          </h3>
+      </a>
     </div>
 
     <!-- Article 2 -->
@@ -86,10 +91,10 @@
         </div>
       </div>
       <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-        Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
+        {{ blog.title }}
       </h3>
     </div>
-
+{% endfor %}
     <!-- Article 3 -->
     <div class="blog-card flex flex-col gap-4" data-category="Technology">
       <div class="relative">

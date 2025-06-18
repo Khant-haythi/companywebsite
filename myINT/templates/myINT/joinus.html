@@ -1,0 +1,197 @@
+{% extends 'myINT/layout.html' %}
+<!-- templates/joinus.html -->
+{% load static %}
+{% block title %}Join Us{% endblock %}
+
+{% block background %}
+<img class="w-full h-[750px] absolute overflow-hidden object-cover" src="{% static 'myINT/images/background.png' %}" alt="Background"/>
+{% endblock %}
+
+{% block Page %}
+<!-- Container -->
+<div class="max-w-[1170px] mx-auto mt-0 px-4">
+
+  <!-- Desktop Layout -->
+  <div class="hidden md:block">
+    <div class="w-[499px] h-44 relative justify-center">
+      <div class="left-[555px] top-[10px] absolute text-center justify-start text-black text-3xl font-medium font-Poppins leading-loose">meet</div>
+      <div class="left-[400px] top-[58px] absolute text-center justify-start text-black text-7xl font-bold font-Poppins leading-[96px] whitespace-nowrap">OUR TEAM</div>
+      <div class="w-48 h-0 left-[651px] top-[32px] absolute outline outline-1 outline-offset-[-0.50px] outline-white"></div>
+      <div class="w-44 h-0 left-[350px] top-[32px] absolute outline outline-1 outline-offset-[-0.50px] outline-white"></div>
+
+      <div class="w-[564px] h-60 absolute bg-gradient-to-b opacity-90 from-white/20 to-gray/40 rounded-[30px] backdrop-blur-lg left-[318px] top-[430px] z-40 items-center text-center justify-center inline-flex flex-col gap-4">
+        <div class="w-[508px] text-center text-black/80 text-xl font-normal font-sans leading-loose">
+          Our team is driven by a passion for innovation<br/>
+          and a commitment to excellence.<br/>
+          bringing years of experience across industries.
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex gap-4 mt-4">
+          <button class="px-4 py-2 rounded-full border border-gray-300">Action</button>
+          <button class="px-4 py-2 rounded-full bg-blue-800 text-white">Experts</button>
+          <button class="px-4 py-2 rounded-full border border-gray-300">Vision</button>
+        </div>
+
+      </div>
+    </div>
+    <img class="h-full w-full relative opacity-80 object-cover overflow-hidden inset-0 top-[-280px]" src="{% static 'myINT/images/Avators_Group.png' %}" />
+
+    <!-- Profile Card -->
+    <div class="w-[852.21px] h-[1100px] relative mx-auto mt-[-300px]">
+      <div class="relative w-full h-screen overflow-hidden">
+        <img class="absolute h-full w-full transform rotate-180 object-cover inset-0" src="{% static 'myINT/images/Graphic.png' %}" />
+      </div>
+      <div class="w-6 h-6 left-[746px] top-[705px] absolute bg-blue-300/60 rounded-full"></div>
+
+      <!-- Cards -->
+      <div class="w-64 h-96 py-4 left-[291px] top-0 absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2">
+        <div class="w-48 h-60 bg-gradient-to-br from-white via-sky-800 to-slate-900 rounded-[20px]">
+          <img class="w-48 h-52 rounded-[20px]" src="{% static 'myINT/images/David.png' %}" />
+        </div>
+        <div class="self-stretch h-24 p-2 flex flex-col justify-start items-start gap-2">
+          <div class="self-stretch flex flex-col justify-start items-center gap-3.5">
+            <div class="self-stretch text-center justify-start text-zinc-900 text-3xl font-bold font-Poppins leading-10">David</div>
+            <div class="self-stretch text-center justify-start text-black/60 text-xl font-medium font-Poppins leading-7">CEO at iNT Solutions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-64 h-96 py-4 left-[-8px] top-[188px] absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2">
+        <div class="w-48 h-60 bg-gradient-to-br from-white via-sky-800 to-slate-900 rounded-[20px]">
+          <img class="w-48 h-52 rounded-[20px]" src="{% static 'myINT/images/peter.png' %}" />
+        </div>
+        <div class="self-stretch h-24 p-2 flex flex-col justify-start items-start gap-2">
+          <div class="self-stretch flex flex-col justify-start items-center gap-3.5">
+            <div class="self-stretch text-center justify-start text-zinc-900 text-3xl font-bold font-Poppins leading-10">Peter</div>
+            <div class="self-stretch text-center justify-start text-black/60 text-xl font-medium font-Poppins leading-7">CTO at iNT Solutions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-64 h-96 py-4 left-[-8px] top-[588px] absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2">
+        <div class="w-48 h-60 bg-gradient-to-br from-white via-sky-800 to-slate-900 rounded-[20px]">
+          <img class="w-48 h-52 rounded-[20px]" src="{% static 'myINT/images/rachel.png' %}" />
+        </div>
+        <div class="self-stretch h-24 p-2 flex flex-col justify-start items-start gap-2">
+          <div class="self-stretch flex flex-col justify-start items-center gap-3.5">
+            <div class="self-stretch text-center justify-start text-zinc-900 text-3xl font-bold font-Poppins leading-10">Rachel</div>
+            <div class="self-stretch text-center justify-start text-black/60 text-xl font-medium font-Poppins leading-7">CFO at iNT Solutions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-64 h-96 py-4 left-[291px] top-[406px] absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2">
+        <div class="w-48 h-60 bg-gradient-to-br from-white via-sky-800 to-slate-900 rounded-[20px]">
+          <img class="w-48 h-52 rounded-[20px]" src="{% static 'myINT/images/ryan.png' %}" />
+        </div>
+        <div class="self-stretch h-24 p-2 flex flex-col justify-start items-start gap-2">
+          <div class="self-stretch flex flex-col justify-start items-center gap-3.5">
+            <div class="self-stretch text-center justify-start text-zinc-900 text-3xl font-bold font-Poppins leading-10">Ryan</div>
+            <div class="self-stretch text-center justify-start text-black/60 text-xl font-medium font-Poppins leading-7">COO at iNT Solutions</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-64 h-96 py-4 left-[590px] top-[188px] absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2">
+        <div class="w-48 h-60 bg-gradient-to-br from-white via-sky-800 to-slate-900 rounded-[20px]">
+          <img class="w-48 h-52 rounded-[20px]" src="{% static 'myINT/images/david.png' %}" />
+        </div>
+        <div class="self-stretch h-24 p-2 flex flex-col justify-start items-start gap-2">
+          <div class="self-stretch flex flex-col justify-start items-center gap-3.5">
+            <div class="self-stretch text-center justify-start text-zinc-900 text-3xl font-bold font-Poppins leading-10">Sarah</div>
+            <div class="self-stretch text-center justify-start text-black/60 text-xl font-medium font-Poppins leading-7">Lead Developer</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-64 h-96 py-4 left-[590px] top-[588px] absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2">
+        <div class="w-48 h-60 bg-gradient-to-br from-white via-sky-800 to-slate-900 rounded-[20px]">
+          <img class="w-48 h-52 rounded-[20px]" src="{% static 'myINT/images/ryan.png' %}" />
+        </div>
+        <div class="self-stretch h-24 p-2 flex flex-col justify-start items-start gap-2">
+          <div class="self-stretch flex flex-col justify-start items-center gap-3.5">
+            <div class="self-stretch text-center justify-start text-zinc-900 text-3xl font-bold font-Poppins leading-10">Michael</div>
+            <div class="self-stretch text-center justify-start text-black/60 text-xl font-medium font-Poppins leading-7">Marketing Head</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile & Tablet Layout with Grid -->
+  <div class="block md:hidden px-4 mt-4">
+    <div class="text-center mb-6">
+      <h2 class="text-3xl font-bold">OUR TEAM</h2>
+      <p class="text-sm text-gray-600 mt-2">
+        Our team is driven by a passion for innovation and a commitment to excellence, bringing years of experience across industries.
+      </p>
+       <!-- Mobile Buttons -->
+    <div class="flex justify-center gap-4 mt-6 mb-10">
+      <button class="px-4 py-2 rounded-full border border-gray-300 text-sm">Action</button>
+      <button class="px-4 py-2 rounded-full bg-blue-800 text-white text-sm">Experts</button>
+      <button class="px-4 py-2 rounded-full border border-gray-300 text-sm">Vision</button>
+    </div>
+    </div>
+
+    <!-- Responsive Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <!-- David -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img class="w-full h-4=80 object-cover" src="{% static 'myINT/images/David.png' %}" />
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-semibold">David</h3>
+          <p class="text-gray-600 text-sm">CEO at iNT Solutions</p>
+        </div>
+      </div>
+
+      <!-- Peter -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img class="w-full h-80 object-cover" src="{% static 'myINT/images/peter.png' %}" />
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-semibold">Peter</h3>
+          <p class="text-gray-600 text-sm">CTO at iNT Solutions</p>
+        </div>
+      </div>
+
+      <!-- Rachel -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img class="w-full h-80 object-cover" src="{% static 'myINT/images/rachel.png' %}" />
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-semibold">Rachel</h3>
+          <p class="text-gray-600 text-sm">CFO at iNT Solutions</p>
+        </div>
+      </div>
+
+      <!-- Ryan -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img class="w-full h-80 object-cover" src="{% static 'myINT/images/david.png' %}" />
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-semibold">Ryan</h3>
+          <p class="text-gray-600 text-sm">COO at iNT Solutions</p>
+        </div>
+      </div>
+
+      <!-- Sarah -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img class="w-full h-80 object-cover" src="{% static 'myINT/images/ryan.png' %}" />
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-semibold">Sarah</h3>
+          <p class="text-gray-600 text-sm">Lead Developer</p>
+        </div>
+      </div>
+
+      <!-- Michael -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <img class="w-full h-80 object-cover" src="{% static 'myINT/images/rachel.png' %}" />
+        <div class="p-4 text-center">
+          <h3 class="text-xl font-semibold">Michael</h3>
+          <p class="text-gray-600 text-sm">Marketing Head</p>
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+</div>
+{% endblock %}
