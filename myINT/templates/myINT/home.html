@@ -22,42 +22,44 @@
 {% block background %} 
 
 <!-- Background Video -->
-<div class="absolute inset-0 w-full h-full ">
+<div class="absolute inset-0 w-full ">
   <video 
     autoplay 
     loop 
     muted 
-    class="w-full  h-[750px]  object-cover ">
+    class="w-full h-[750px] sm:h-[750px] md:h-[750px] object-cover">
     <source src="{% static 'myINT/videos/LoopiNT.mp4' %}" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
 
-   <!-- Content Overlay -->
-  <div class="absolute inset-x-0 bottom-6 z-10 px-4">
-    <!-- Heading -->
-    <div class="text-center text-white text-base sm:text-lg md:text-xl font-bold font-Poppins leading-normal">
-      TRUSTED TECHNOLOGY PARTNERS
-    </div>
+  
 
-    <!-- Logo Container -->
-    <div class="w-full max-w-[683px] h-16 relative bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl overflow-x-auto mx-auto mt-2 px-4">
-      <div class="flex items-center px-2 gap-6 py-2 min-w-max">
-        <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Dell_EMC_logo.svg.svg' %}" alt="Dell EMC" />
-        <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Juniper_Networks-Logo.wine.svg' %}" alt="Juniper" />
-        <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Veritas_Technologies_logo.svg.svg' %}" alt="Veritas" />
-        <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Nutanix-Logo.wine.svg' %}" alt="Nutanix" />
-        <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/PaloAltoNetworks_2020_Logo.svg.svg' %}" alt="Palo Alto Networks" />
-      </div>
+{% endblock %}
+
+ 
+{% block content %}
+<!-- Content Overlay -->
+ <main class="relative z-10 pt-[320px] sm:pt-[360px] md:pt-[420px] px-4 pb-10 md:pb-16 lg:pb-20 mx-auto max-w-screen-xl overflow-hidden">
+
+<div class="relative px-4 py-6  ">
+  <!-- Heading -->
+  <div class="text-center text-white text-base sm:text-lg md:text-xl font-bold font-Poppins leading-normal mb-4">
+    TRUSTED TECHNOLOGY PARTNERS
+  </div>
+
+  <!-- Logo Container -->
+  <div class="w-full max-w-[583px] mx-auto overflow-x-auto pb-4 hide-scrollbar">
+    <div class="flex items-center gap-6 px-2 py-2 bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl">
+      <img class="w-24 h-16 flex-shrink-0 sm:w-20 sm:h-14 md:w-24 md:h-16" src="{% static 'myINT/images/Dell_EMC_logo.svg.svg' %}" alt="Dell EMC" />
+      <img class="w-24 h-16 flex-shrink-0 sm:w-20 sm:h-14 md:w-24 md:h-16" src="{% static 'myINT/images/Juniper_Networks-Logo.wine.svg' %}" alt="Juniper" />
+      <img class="w-24 h-16 flex-shrink-0 sm:w-20 sm:h-14 md:w-24 md:h-16" src="{% static 'myINT/images/Veritas_Technologies_logo.svg.svg' %}" alt="Veritas" />
+      <img class="w-24 h-16 flex-shrink-0 sm:w-20 sm:h-14 md:w-24 md:h-16" src="{% static 'myINT/images/Nutanix-Logo.wine.svg' %}" alt="Nutanix" />
+      <img class="w-24 h-16 flex-shrink-0 sm:w-20 sm:h-14 md:w-24 md:h-16" src="{% static 'myINT/images/PaloAltoNetworks_2020_Logo.svg.svg' %}" alt="Palo Alto Networks" />
     </div>
   </div>
 </div>
 
-{% endblock %}
-
-
-{% block content %}
-<main class="relative z-10 pt-[580px] px-4 pb-10 md:pb-16 lg:pb-20 mx-auto max-w-screen-xl overflow-hidden">
 <div class="prose prose-invert max-w-none">
     <!-- Home Section -->
   <section id="home" class="py-16">

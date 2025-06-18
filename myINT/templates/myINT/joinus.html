@@ -12,40 +12,54 @@
 <div class="max-w-[1170px] mx-auto mt-0 px-4">
 
   <!-- Desktop Layout -->
-  <div class="hidden md:block">
-    <div class="w-[499px] h-44 relative justify-center">
-      <div class="left-[555px] top-[10px] absolute text-center justify-start text-black text-3xl font-medium font-Poppins leading-loose">meet</div>
-      <div class="left-[400px] top-[58px] absolute text-center justify-start text-black text-7xl font-bold font-Poppins leading-[96px] whitespace-nowrap">OUR TEAM</div>
-      <div class="w-48 h-0 left-[651px] top-[32px] absolute outline outline-1 outline-offset-[-0.50px] outline-white"></div>
-      <div class="w-44 h-0 left-[350px] top-[32px] absolute outline outline-1 outline-offset-[-0.50px] outline-white"></div>
+  <!-- Use sm:block to show from small screens and up -->
+<div class="hidden md:block">
 
-      <div class="w-[564px] h-60 absolute bg-gradient-to-b opacity-90 from-white/20 to-gray/40 rounded-[30px] backdrop-blur-lg left-[318px] top-[430px] z-40 items-center text-center justify-center inline-flex flex-col gap-4">
-        <div class="w-[508px] text-center text-black/80 text-xl font-normal font-sans leading-loose">
-          Our team is driven by a passion for innovation<br/>
-          and a commitment to excellence.<br/>
-          bringing years of experience across industries.
-        </div>
+  <div class="w-full max-w-[499px] h-44 mx-auto relative flex justify-center">
 
-        <!-- Buttons -->
-        <div class="flex gap-4 mt-4">
-          <button class="px-4 py-2 rounded-full border border-gray-300">Action</button>
-          <button class="px-4 py-2 rounded-full bg-blue-800 text-white">Experts</button>
-          <button class="px-4 py-2 rounded-full border border-gray-300">Vision</button>
-        </div>
-
-      </div>
+    <!-- meet -->
+    <div class="absolute left-1/2 -translate-x-1/2 top-3 text-center text-black text-xl sm:text-2xl md:text-2xl lg:text-3xl font-medium font-Poppins">
+      meet
     </div>
+
+    <!-- OUR TEAM -->
+    <div class="absolute left-1/2 -translate-x-1/2 top-[58px] text-center text-black text-4xl sm:text-6xl md:text-5xl lg:text-7xl font-bold font-Poppins leading-[1.1] whitespace-nowrap">
+      OUR TEAM
+    </div>
+
+    <!-- Lines -->
+    <div class="w-32 sm:w-48 h-0 absolute left-[60%] top-[32px] outline outline-1 outline-offset-[-0.5px] outline-white"></div>
+    <div class="w-24 sm:w-44 h-0 absolute left-[5%] top-[32px] outline outline-1 outline-offset-[-0.5px] outline-white"></div>
+
+    <!-- Info Box -->
+    <div class="absolute left-1/2 -translate-x-1/2 top-[300px] sm:top-[200px] md:top-[270px] lg:top-[420px] z-50 bg-gradient-to-b opacity-90 from-white/20 to-gray/40 rounded-[30px] backdrop-blur-lg p-4 flex flex-col items-center text-center gap-3 w-[90%] sm:w-[70%] md:w-[85%] md:h- lg:w-[594px] max-w-full">
+
+      <p class="text-sm sm:text-base md:text-lg text-black/80 font-normal font-sans leading-relaxed">
+        Our team is driven by a passion for innovation<br/>
+        and a commitment to excellence.<br/>
+        bringing years of experience across industries.
+      </p>
+      <!-- Buttons -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mt-2">
+        <button class="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-full border border-gray-300">Action</button>
+        <button class="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-full bg-blue-800 text-white">Experts</button>
+        <button class="px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm rounded-full border border-gray-300">Vision</button>
+      </div>
+
+    </div>
+  </div>
+
     <img class="h-full w-full relative opacity-80 object-cover overflow-hidden inset-0 top-[-280px]" src="{% static 'myINT/images/Avators_Group.png' %}" />
 
     <!-- Profile Card -->
-    <div class="w-[852.21px] h-[1100px] relative mx-auto mt-[-300px]">
+    <div class="max-w-[852.21px] h-[1100px] relative mx-auto mt-[-230px] overflow-hidden">
       <div class="relative w-full h-screen overflow-hidden">
-        <img class="absolute h-full w-full transform rotate-180 object-cover inset-0" src="{% static 'myINT/images/Graphic.png' %}" />
+        <img class="absolute h-full w-full transform rotate-180 object-cover overflow-hidden" src="{% static 'myINT/images/Graphic.png' %}" />
       </div>
       <div class="w-6 h-6 left-[746px] top-[705px] absolute bg-blue-300/60 rounded-full"></div>
 
       <!-- Cards -->
-      <div class="w-64 h-96 py-4 left-[291px] top-0 absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2">
+      <div class="w-64 h-96 py-4 left-[291px] top-0 absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2 overflow-hidden">
         <div class="w-48 h-60 bg-gradient-to-br from-white via-sky-800 to-slate-900 rounded-[20px]">
           <img class="w-48 h-52 rounded-[20px]" src="{% static 'myINT/images/David.png' %}" />
         </div>
@@ -136,9 +150,10 @@
 
     <!-- Responsive Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      
       <!-- David -->
       <div class="bg-white rounded-xl shadow-md overflow-hidden">
-        <img class="w-full h-4=80 object-cover" src="{% static 'myINT/images/David.png' %}" />
+        <img class="w-full h-80 object-cover" src="{% static 'myINT/images/David.png' %}" />
         <div class="p-4 text-center">
           <h3 class="text-xl font-semibold">David</h3>
           <p class="text-gray-600 text-sm">CEO at iNT Solutions</p>
