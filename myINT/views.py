@@ -3,10 +3,12 @@ from django.utils.timezone import datetime
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.shortcuts import redirect
+import markupsafe
 from myINT.forms import LogMessageForm
 from myINT.models import Blog, Category
 from django.views.generic import ListView
-
+import markdown
+from django.utils.safestring import mark_safe
 
 def index(request):
     
@@ -47,4 +49,6 @@ def joinus(request):
 
 def blog_detail(request, blog_id):
    blog = get_object_or_404(Blog, id=blog_id)
-   return render(request, 'myINT/blogdetail.html', {'blog': blog})
+   html_content = markdown.markdown(blog.content)
+   print(markdown.markdown(blog.content))
+   return render(request, 'myINT/blogdetail.html', {'blog': blog,'html_content': html_content})

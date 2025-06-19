@@ -1,3 +1,4 @@
+
 {% extends 'myINT/layout.html' %}
 <!-- templates/blog.html -->
 {% load static %}
@@ -7,11 +8,50 @@
 {% endblock %}
 {% block Page %}
 
-<h1>{{ blog.title }}</h1>
+{% load static %}
+<style>
+  .markdown-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .markdown-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .markdown-content ul {
+    margin-left: 1.5rem;
+    list-style-type: disc;
+  }
+
+  .markdown-content li {
+    margin: 0.25rem 0;
+  }
+
+  .markdown-content p {
+    margin-bottom: 0.75rem;
+  }
+
+  .markdown-content strong {
+    font-weight: bold;
+  }
+
+  .markdown-content em {
+    font-style: italic;
+  }
+</style>
+
+<div class="self-stretch justify-start text-zinc-900 text-4xl font-bold font-['Poppins'] leading-[50px]">{{ blog.title }}</div>
 
 <!-- This WILL render HTML -->
 <div>
-  {{ blog.content|safe }}
+  <div class="markdown-content">  
+  {{ html_content | safe }}
+  </div>
 </div>
 
 {% endblock %}
