@@ -16,8 +16,13 @@
 
     <!-- Search Bar -->
     <div class=" w-96 sm:w-[459px] px-10 py-4 ml-auto rounded-[50px] outline outline-[0.50px] outline-offset-[-0.50px] outline-zinc-900/60 inline-flex justify-between items-center">
-      <span class="text-stone-600/80 text-xl font-normal font-poppins">Search </span>
-      <img src="{% static 'myINT/images/Search.svg' %}" alt="Search" class="w-6 h-6" />
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search something"
+        class="w-full px-4 text-xl font-normal font-poppins text-zinc-900 focus:outline-none bg-transparent"
+      />
+      <img src="{% static 'myINT/images/Search.svg' %}" alt="Search" class="w-6 h-6 text-zinc-900" />
     </div>
 
   </div>
@@ -29,166 +34,93 @@
  
   <!-- Blog Grid -->
   <div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-10">
-
+{% for blog in blogs %}
+    {% if blog.id %}
+    {% if forloop.counter <= 4 %}
     <!-- Article 1 -->
-    <div class="blog-card flex flex-col gap-4" data-category="Business">
-      <div class="relative">
-        <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/News1.svg' %}" alt="Nvidia Blog" />
-       
-      </div>
+    <div class="blog-card flex flex-col gap-4" data-category="{{ blog.categories.all.0.name }}">
+      <a href="{% url 'blog_detail' blog.id %}">
+        <div class="relative">
+          <img class="w-full h-80 object-cover rounded-[50px]" src="{{ blog.image.url }}" alt="Nvidia Blog" />
+          <div class="absolute top-5 left-5 flex gap-4">
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-black bg-white text-base font-normal font-poppins">Business</span>
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
+          </div>
+        </div>
+      </a>
       <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-        <p class="mt-2">May 26, 2025</p>
+        <p class="mt-2">{{ blog.created_at }}</p>
         <div class="flex items-center gap-2">
           <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
           <p>7.8k</p>
         </div>
       </div>
-      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-        Enhancing Network Performance and Security for a Multi-Site Organization
-      </h3>
+       <a href="{% url 'blog_detail' blog.id %}">
+          <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+            {{ blog.title }}
+          </h3>
+      </a>
     </div>
-
-    <!-- Article 2 -->
-    <div class="blog-card flex flex-col gap-4" data-category="Business">
-      <div class="relative">
-        <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/telegram.svg' %}" alt="Telegram Blog" />
-        
-      </div>
+    {% else %}
+    <div class="blog-card hidden flex flex-col gap-4" data-category="{{ blog.categories.all.0.name }}">
+      <a href="{% url 'blog_detail' blog.id %}">
+        <div class="relative">
+          <img class="w-full h-80 object-cover rounded-[50px]" src="{{ blog.image.url }}" alt="Nvidia Blog" />
+          <div class="absolute top-5 left-5 flex gap-4">
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-black bg-white text-base font-normal font-poppins">Business</span>
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
+          </div>
+        </div>
+      </a>
       <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-        <p class="mt-2">May 26, 2025</p>
+        <p class="mt-2">{{ blog.created_at }}</p>
         <div class="flex items-center gap-2">
           <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
           <p>7.8k</p>
         </div>
       </div>
-      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-        Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
-      </h3>
+       <a href="{% url 'blog_detail' blog.id %}">
+          <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+            {{ blog.title }}
+          </h3>
+      </a>
     </div>
+    {% endif %}
+    {% endif %}
+{% endfor %}
 
-    <!-- Article 3 -->
-    <div class="blog-card flex flex-col gap-4" data-category="Technology">
-      <div class="relative">
-        <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/openai.svg' %}" alt="OpenAI Blog" />
-    
-      </div>
-      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-        <p class="mt-2">May 26, 2025</p>
-        <div class="flex items-center gap-2">
-          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-          <p>7.8k</p>
-        </div>
-      </div>
-      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-        OpenAI to open office in Seoul amid growing demand for ChatGPT
-      </h3>
-    </div>
-
-    <!-- Article 4 -->
-    <div class="blog-card flex flex-col gap-4" data-category="Technology">
-      <div class="relative">
-        <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/elon.svg' %}" alt="Elon Blog" />
-        
-      </div>
-      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-        <p class="mt-2">May 26, 2025</p>
-        <div class="flex items-center gap-2">
-          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-          <p>4.5k</p>
-        </div>
-      </div>
-      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-        Elon Musk says he’ll resume working ‘24/7’ at his companies...
-      </h3>
-    </div>
-
-    <!-- Hidden Articles -->
-    <div id="hidden-articles" class="hidden">
-
-      <!-- Article 5 -->
-      <div class="blog-card flex flex-col gap-4" data-category="Art">
-        <div class="relative">
-          <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/telegram.svg' %}" alt="Telegram Blog" />
-        
-        </div>
-        <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-          <p class="mt-2">May 27, 2025</p>
-          <div class="flex items-center gap-2">
-            <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-            <p>6.3k</p>
-          </div>
-        </div>
-        <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-          Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
-        </h3>
-      </div>
-
-      <!-- Article 6 -->
-      <div class="blog-card flex flex-col gap-4" data-category="Finance">
-        <div class="relative">
-          <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/telegram.svg' %}" alt="Telegram Blog" />
-          
-        </div>
-        <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-          <p class="mt-2">May 28, 2025</p>
-          <div class="flex items-center gap-2">
-            <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-            <p>5.1k</p>
-          </div>
-        </div>
-        <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-          Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
-        </h3>
-      </div>
-
-      <!-- Article 7 -->
-      <div class="blog-card flex flex-col gap-4" data-category="Gaming">
-        <div class="relative">
-          <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/telegram.svg' %}" alt="Telegram Blog" />
-          
-        </div>
-        <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-          <p class="mt-2">May 29, 2025</p>
-          <div class="flex items-center gap-2">
-            <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-            <p>4.7k</p>
-          </div>
-        </div>
-        <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-          Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
-        </h3>
-      </div>
-
-      <!-- Article 8 -->
-      <div class="blog-card flex flex-col gap-4" data-category="Science">
-        <div class="relative">
-          <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/telegram.svg' %}" alt="Telegram Blog" />
-         
-        </div>
-        <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-          <p class="mt-2">May 30, 2025</p>
-          <div class="flex items-center gap-2">
-            <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-            <p>5.9k</p>
-          </div>
-        </div>
-        <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-          Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
-        </h3>
-      </div>
 
     </div>
   </div>
 
   <!-- Load More Button -->
-  <div id="load-more-btn" class="mt-10 px-10 py-3 mx-auto max-w-max rounded-[50px] outline outline-1 outline-offset-[-1px] outline-zinc-900 cursor-pointer">
+  <div id="new-load-more-btn" class="mt-10 px-10 py-3 mx-auto max-w-max rounded-[50px] outline outline-1 outline-offset-[-1px] outline-zinc-900 cursor-pointer">
     <div class="text-zinc-900 text-xl font-normal font-Poppins">Load More Article</div>
   </div>
 
 </div>
 
+
 <script>
- 
+ //new Load More Button functionality
+  let currentVisible = 4;
+
+  document.getElementById("new-load-more-btn").addEventListener("click", function () {
+    const cards = document.querySelectorAll(".blog-card");
+    
+    // Show next 4 cards
+    for (let i = currentVisible; i < Math.min(currentVisible + 4, cards.length); i++) {
+      cards[i].classList.remove("hidden");
+    }
+
+    currentVisible += 4;
+
+    // Optional: Hide button when all cards are shown
+    if (currentVisible >= cards.length) {
+      this.style.display = "none";
+    }
+  });
+
   // Filter blog cards by category
   document.querySelectorAll('.dropdown-item').forEach(link => {
     link.addEventListener('click', function (e) {

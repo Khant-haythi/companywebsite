@@ -380,143 +380,69 @@
     <h2 class="text-3xl font-medium text-zinc-900 font-poppins">Blogs</h2>
     <div class="w-44 h-[3px] mt-2 mx-auto bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
   </div>
-
-  <!-- Blog Grid -->
-  <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10">
-    <!-- Blog Card -->
-    <div class="flex flex-col gap-4">
-      <div class="relative">
-        <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/navidia.svg' %}" alt="Nvidia Blog" />
-        <div class="absolute top-5 left-5 flex gap-4">
-          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Business</span>
-          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
-        </div>
-      </div>
-      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-        <p class="mt-2">May 26, 2025</p>
-        <div class="flex items-center gap-2">
-          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-          <p>7.8k</p>
-        </div>
-      </div>
-      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-        Oracle to buy $40 billion of Nvidia chips for OpenAI’s US data center, FT reports
-      </h3>
-    </div>
-
-    <!-- Blog Card -->
-    <div class="flex flex-col gap-4">
-      <div class="relative">
-        <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/telegram.svg' %}" alt="Telegram Blog" />
-        <div class="absolute top-5 left-5 flex gap-4">
-          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Business</span>
-          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
-        </div>
-      </div>
-      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-        <p class="mt-2">May 26, 2025</p>
-        <div class="flex items-center gap-2">
-          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-          <p>7.8k</p>
-        </div>
-      </div>
-      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-        Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
-      </h3>
-    </div>
-
-    <!-- Blog Card -->
-    <div class="flex flex-col gap-4">
-      <div class="relative">
-        <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/elon.svg' %}" alt="Elon Musk Blog" />
-        <div class="absolute top-5 left-5 flex gap-4">
-          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Business</span>
-          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
-        </div>
-      </div>
-      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-        <p class="mt-2">May 26, 2025</p>
-        <div class="flex items-center gap-2">
-          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-          <p>4.5k</p>
-        </div>
-      </div>
-      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-        Elon Musk says he’ll resume working ‘24/7’ at his companies, X outage mostly re-stored
-      </h3>
-    </div>
-
-    <!-- Blog Card -->
-    <div class="flex flex-col gap-4">
-      <div class="relative">
-        <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/openai.svg' %}" alt="OpenAI Blog" />
-        <div class="absolute top-5 left-5 flex gap-4">
-          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Business</span>
-          <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
-        </div>
-      </div>
-      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-        <p class="mt-2">May 26, 2025</p>
-        <div class="flex items-center gap-2">
-          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-          <p>7.8k</p>
-        </div>
-      </div>
-      <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-        OpenAI to open office in Seoul amid growing demand for ChatGPT
-      </h3>
-    </div>
-  
-   <!-- Hidden Articles -->
-    <div id="hidden-articles" class="hidden">
-
-      <!-- Article 5 -->
-      <div class="blog-card flex flex-col gap-4" data-category="Art">
+    <!-- Blog Grid -->
+  <div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10 mt-16">
+{% for blog in blogs %}
+    {% if blog.id %}
+    {% if forloop.counter <= 4 %}
+    <!-- Article 1 -->
+    <div class="blog-card flex flex-col gap-4" data-category="{{ blog.categories.all.0.name }}">
+      <a href="{% url 'blog_detail' blog.id %}">
         <div class="relative">
-          <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/telegram.svg' %}" alt="Telegram Blog" />
+          <img class="w-full h-80 object-cover rounded-[50px]" src="{{ blog.image.url }}" alt="Nvidia Blog" />
           <div class="absolute top-5 left-5 flex gap-4">
-            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Art</span>
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-black bg-white text-base font-normal font-poppins">Business</span>
             <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
           </div>
         </div>
-        <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-          <p class="mt-2">May 27, 2025</p>
-          <div class="flex items-center gap-2">
-            <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-            <p>6.3k</p>
-          </div>
+      </a>
+      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
+        <p class="mt-2">{{ blog.created_at }}</p>
+        <div class="flex items-center gap-2">
+          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
+          <p>7.8k</p>
         </div>
-        <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-          Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
-        </h3>
       </div>
-
-      <!-- Article 6 -->
-      <div class="blog-card flex flex-col gap-4" data-category="Finance">
+       <a href="{% url 'blog_detail' blog.id %}">
+          <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+            {{ blog.title }}
+          </h3>
+      </a>
+    </div>
+    {% else %}
+    <div class="blog-card hidden flex flex-col gap-4" data-category="{{ blog.categories.all.0.name }}">
+      <a href="{% url 'blog_detail' blog.id %}">
         <div class="relative">
-          <img class="w-full h-80 object-cover rounded-[50px]" src="{% static 'myINT/images/telegram.svg' %}" alt="Telegram Blog" />
+          <img class="w-full h-80 object-cover rounded-[50px]" src="{{ blog.image.url }}" alt="Nvidia Blog" />
           <div class="absolute top-5 left-5 flex gap-4">
-            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Finance</span>
+            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-black bg-white text-base font-normal font-poppins">Business</span>
             <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
           </div>
         </div>
-        <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
-          <p class="mt-2">May 28, 2025</p>
-          <div class="flex items-center gap-2">
-            <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-            <p>5.1k</p>
-          </div>
+      </a>
+      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
+        <p class="mt-2">{{ blog.created_at }}</p>
+        <div class="flex items-center gap-2">
+          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
+          <p>7.8k</p>
         </div>
-        <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
-          Telegram ‘surprised’ as Vietnam orders messaging app to be blocked
-        </h3>
       </div>
+       <a href="{% url 'blog_detail' blog.id %}">
+          <h3 class="text-2xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+            {{ blog.title }}
+          </h3>
+      </a>
+    </div>
+    {% endif %}
+    {% endif %}
+{% endfor %}
 
-</div>
-  
-</div>
+
+    </div>
+  </div>
+
 <!-- Load More -->
-  <div id="load-more-btn" class="mt-10 px-10 py-3 mx-auto  max-w-max rounded-[50px] outline outline-1 outline-offset-[-1px] outline-zinc-900 justify-center cursor-pointer">
+  <div id="new-load-more-btn" class="mt-10 px-10 py-3 mx-auto  max-w-max rounded-[50px] outline outline-1 outline-offset-[-1px] outline-zinc-900 justify-center cursor-pointer">
     <div class="text-zinc-900 text-xl font-normal font-Poppins">Load More Article</div>
   </div>
 </section>
@@ -671,30 +597,46 @@
     </div>
 
     <!-- Right Info Section -->
-    <div class="flex-1 bg-transparent flex flex-col items-center lg:items-start">
-      <img class="w-full max-w-md rounded-[50px] shadow-lg mb-6" src="{% static 'myINT/images/gmap.svg' %}" alt="Map"/>
+   <div class="flex-1 bg-transparent flex flex-col items-center lg:items-start">
+  <img class="w-full max-w-md rounded-[50px] shadow-lg mb-6" src="{% static 'myINT/images/gmap.svg' %}" alt="Map"/>
 
-      <div class="w-full">
-        <div class="flex items-start mb-4 mb:items-center">
-          <div class="text-zinc-900 font-semibold font-Poppins mr-2">Address:</div>
-          <div class="text-zinc-900 font-normal font-Poppins leading-relaxed">
-            Room 705, Building 19, 6th Floor, MICT Park, Hlaing Tsp, Yangon
-          </div>
-        </div>
-        <div class="flex items-start mb-4">
-          <div class="text-zinc-900 font-semibold font-Poppins mr-2">Phone:</div>
-          <div class="text-zinc-900 font-normal font-Poppins leading-relaxed">
-            +959775035648
-          </div>
-        </div>
-        <div class="flex items-start">
-          <div class="text-zinc-900 font-semibold font-Poppins mr-2">Email:</div>
-          <div class="text-zinc-900 font-normal font-Poppins leading-relaxed">
-            hello@intmm.net
-          </div>
-        </div>
+  <div class="w-full">
+    <!-- Address -->
+    <div class="flex items-start mb-4">
+      <div class="text-zinc-900 font-semibold font-Poppins mr-2">Address:</div>
+      <div class="text-zinc-900 font-normal font-Poppins leading-relaxed">
+        <a href="https://www.google.com/maps/search/?api=1&query=Room+705%2C+Building+19%2C+6th+Floor%2C+MICT+Park%2C+Hlaing+Tsp%2C+Yangon"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="text-zinc-900 hover:underline">
+          Room 705, Building 19, 6th Floor, MICT Park, Hlaing Tsp, Yangon
+        </a>
       </div>
     </div>
+
+    <!-- Phone -->
+    <div class="flex items-start mb-4">
+      <div class="text-zinc-900 font-semibold font-Poppins mr-2">Phone:</div>
+      <div class="text-zinc-900 font-normal font-Poppins leading-relaxed">
+        <a href="tel:+959775035648"
+           class="text-zinc-900 hover:underline">
+          +959 775 035 648
+        </a>
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="flex items-start">
+      <div class="text-zinc-900 font-semibold font-Poppins mr-2">Email:</div>
+      <div class="text-zinc-900 font-normal font-Poppins leading-relaxed">
+        <a href="mailto:hello@intmm.net"
+           class="text-zinc-900 hover:underline">
+          hello@intmm.net
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
   </div>
 </section>

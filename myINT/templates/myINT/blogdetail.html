@@ -43,6 +43,20 @@
   .markdown-content em {
     font-style: italic;
   }
+
+  .related-blogs {
+  margin-top: 2rem;
+}
+
+.blog-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: scale(1.05);
+}
 </style>
 
 <div class="self-stretch justify-start text-zinc-900 text-4xl font-bold font-['Poppins'] leading-[50px]">{{ blog.title }}</div>
@@ -54,4 +68,34 @@
   </div>
 </div>
 
+<!-- Blogs For You Section -->
+<div class="justify-start text-black text-2xl font-bold font-['Poppins'] leading-9">Blogs For You</div>
+<div class="related-blogs grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  {% for related_blog in related_blogs %}
+    <div class="blog-card flex flex-col gap-4">
+      <a href="{% url 'blog_detail' related_blog.id %}">
+        <div class="relative">
+          <img class="w-full h-80 object-cover rounded-[50px]" src="{{ related_blog.image.url }}" alt="{{ related_blog.title }}" />
+        </div>
+      </a>
+      <div class="flex justify-between items-center text-sm text-zinc-900 font-poppins">
+        <p class="mt-2">{{ related_blog.published_date }}</p>
+        <div class="flex items-center gap-2">
+          <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
+          <p>7.8k</p>
+        </div>
+      </div>
+      <a href="{% url 'blog_detail' related_blog.id %}">
+        <h3 class="text-xl font-bold text-zinc-900 font-poppins leading-9 -mt-2">
+          {{ related_blog.title }}
+        </h3>
+      </a>
+    </div>
+  {% empty %}
+  <div class="text-center py-10 px-4">
+    <h3 class="text-xl font-semibold text-gray-800 mb-2">No related blogs found</h3>
+    <p class="text-gray-600">Check back later or explore other categories for more content.</p>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}

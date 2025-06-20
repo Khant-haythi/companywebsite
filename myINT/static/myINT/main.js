@@ -1,12 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Load more articles
-  document.getElementById('load-more-btn').addEventListener('click', function () {
-    const hiddenArticles = document.getElementById('hidden-articles');
-    const btn = this;
-    hiddenArticles.style.display = 'contents'; // or 'grid' / 'flex'
-    btn.style.display = 'none';
-  });
+  //   // Load more articles
+  // document.getElementById('load-more-btn').addEventListener('click', function () {
+  //   const hiddenArticles = document.getElementById('hidden-articles');
+  //   const btn = this;
+  //   hiddenArticles.style.display = 'contents'; // or 'grid' / 'flex'
+  //   btn.style.display = 'none';
+  // });
 
+  // ================
+  // SEARCH FUNCTION
+  // ================
+const searchInput = document.getElementById("search-input");
+
+    if (searchInput) {
+      searchInput.addEventListener("input", function () {
+        const searchTerm = this.value.toLowerCase();
+        const cards = document.querySelectorAll(".blog-card");
+
+        cards.forEach(card => {
+          const title = card.querySelector("h3")?.textContent.toLowerCase() || "";
+          if (title.includes(searchTerm)) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      });
+    };
+    
   const slider = document.getElementById('slider');
   const dots = document.querySelectorAll('.dot');
 
@@ -38,6 +59,26 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       dot.classList.add('bg-sky-700');
     });
+  });
+
+ 
+   //new Load More Button functionality
+  let currentVisible = 4;
+
+  document.getElementById("new-load-more-btn").addEventListener("click", function () {
+    const cards = document.querySelectorAll(".blog-card");
+    
+    // Show next 4 cards
+    for (let i = currentVisible; i < Math.min(currentVisible + 4, cards.length); i++) {
+      cards[i].classList.remove("hidden");
+    }
+
+    currentVisible += 4;
+
+    // Optional: Hide button when all cards are shown
+    if (currentVisible >= cards.length) {
+      this.style.display = "none";
+    }
   });
 
     //Dropdown functionality
