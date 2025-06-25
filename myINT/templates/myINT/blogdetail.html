@@ -10,67 +10,133 @@
 
 {% load static %}
 <style>
-  .markdown-content h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-  }
-
-  .markdown-content h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .markdown-content ul {
-    margin-left: 1.5rem;
-    list-style-type: disc;
-  }
-
-  .markdown-content li {
-    margin: 0.25rem 0;
-  }
-
-  .markdown-content p {
-    margin-bottom: 0.75rem;
-  }
-
-  .markdown-content strong {
-    font-weight: bold;
-  }
-
-  .markdown-content em {
-    font-style: italic;
-  }
-
-  .related-blogs {
-  margin-top: 2rem;
+  .markdown-content {
+  max-width: 100%;
+  font-size: 1rem;
 }
 
-.blog-card {
-  border: 1px solid #ccc;
+.markdown-content h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.markdown-content h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.markdown-content h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
+.markdown-content h4 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 0.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.markdown-content p,
+.markdown-content li,
+.markdown-content blockquote p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  list-style-type: disc;
+}
+.markdown-content li {
+  margin: 0.25rem 0;
+}
+
+.markdown-content strong {
+  font-weight: bold;
+}
+.markdown-content em {
+  font-style: italic;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem 0;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #666;
+}
+
+.markdown-content pre {
+  background-color: #f4f4f4;
   padding: 1rem;
-  transition: transform 0.3s ease;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  border-radius: 0.375rem;
 }
 
-.blog-card:hover {
-  transform: scale(1.05);
+.markdown-content code {
+  background-color: #eee;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: monospace;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .markdown-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .markdown-content h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.4rem;
+  }
+  .markdown-content h3 {
+    font-size: 1.1rem;
+  }
+  .markdown-content h4 {
+    font-size: 1rem;
+  }
+
+  .markdown-content p,
+  .markdown-content li {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .markdown-content ul,
+  .markdown-content ol {
+    margin-left: 1.25rem;
+  }
 }
 </style>
 
-<div class="self-stretch justify-start text-zinc-900 text-4xl font-bold font-['Poppins'] leading-[50px]">{{ blog.title }}</div>
+<div class="!mt-0 self-stretch justify-start text-zinc-900 text-4xl md:text-3xl sm:text-2xl lg:text-4xl font-bold font-['Poppins'] leading-[50px] md:leading-[40px] ">{{ blog.title }}</div>
 
 <!-- This WILL render HTML -->
 <div>
-  <div class="markdown-content">  
+  <div class="markdown-content" >  
   {{ html_content | safe }}
   </div>
 </div>
 
 <!-- Blogs For You Section -->
-<div class="justify-start text-black text-2xl font-bold font-['Poppins'] leading-9">Blogs For You</div>
-<div class="related-blogs grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="justify-start text-black text-2xl font-bold font-['Poppins'] leading-normal">Blogs For You</div>
+<div class="related-blogs grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
   {% for related_blog in related_blogs %}
     <div class="blog-card flex flex-col gap-4">
       <a href="{% url 'blog_detail' related_blog.id %}">

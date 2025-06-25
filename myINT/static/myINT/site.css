@@ -11,3 +11,18 @@
 .active-case-studies {
   @apply bg-white text-sky-900 font-bold shadow-md;
 }
+
+/* General nav-link styling */
+.nav-link {
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Active link styling */
+.nav-link.active {
+    background-color: white;
+    color: black;
+    border-radius: 16px; /* Rounded corners like in the reference image */
+    padding: 8px 16px; /* Adjust padding as needed */
+}

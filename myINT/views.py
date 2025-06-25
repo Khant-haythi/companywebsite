@@ -16,11 +16,11 @@ def index(request):
 
 def blog(request):
     blogs = Blog.objects.all()
-    return render(request, 'myINT/blog.html',{'blogs': blogs})
+    return render(request, 'myINT/blog.html',{'blogs': blogs,'current_page': 'blog'})
 
 def case(request):
     blogs = Blog.objects.all()
-    return render(request, 'myINT/caseStudies.html', {'blogs': blogs})
+    return render(request, 'myINT/caseStudies.html', {'blogs': blogs,'current_page': 'casestudies'})
 
 def joinus(request):
     team_members = [
@@ -45,7 +45,7 @@ def joinus(request):
             'image': 'myINT/images/ryan.png'
         }
     ]
-    return render(request, 'myINT/joinUs.html', {'team_members': team_members})
+    return render(request, 'myINT/joinUs.html', {'team_members': team_members, 'current_page': 'joinus'})
 
 def blog_detail(request, blog_id):
     # Get the current blog (with 404 if not found)

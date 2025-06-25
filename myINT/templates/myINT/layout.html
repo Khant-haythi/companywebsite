@@ -22,55 +22,71 @@
     {% endblock %}
 
    <!-- Responsive Navbar -->
-<div class="relative z-50">
+<div class="relative z-50 ">
 
   <!-- Mobile Navbar (Responsive) -->
-  <nav class="md:hidden bg-neutral-500/20 backdrop-blur-2xl rounded-full px-4 py-2 mx-4 mt-4 flex items-center justify-between shadow-md">
+  <nav class="md:hidden bg-neutral-500/20 backdrop-blur-2xl rounded-full px-4 py-2 mx-4 mt-0 flex items-center justify-between shadow-md z-10">
     <!-- Logo -->
     <div class="flex-shrink-0">
-      <img class="h-14 w-auto" src="{% static 'myINT/images/intlogo.png' %}" alt="Logo">
+      <a href="{% url 'home' %}" >
+        <img class="h-12 w-auto" src="{% static 'myINT/images/intlogo.png' %}" alt="Logo">
+      </a>
+     
     </div>
 
     <!-- Mobile Menu Button -->
     <div class="md:hidden">
-      <button id="menu-toggle" class="text-white focus:outline-none">
-        ☰
-      </button>
-    </div>
+  <button id="menu-toggle" class="text-white focus:outline-none p-2" aria-label="Toggle menu">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+</div>
   </nav>
 
   <!-- Mobile Menu -->
-  <ul id="mobile-menu" class="hidden md:hidden bg-neutral-500/20 backdrop-blur-2xl mx-4 rounded-lg p-4 space-y-3 text-white font-medium font-poppins text-base">
+  <ul id="mobile-menu" class="hidden md:hidden bg-neutral-500/20 backdrop-blur-2xl mx-4 rounded-lg p-4 space-y-3 text-white font-medium font-poppins text-base ">
     <li><a href="#home">ABOUT</a></li>
     <li><a href="#services">SERVICES</a></li>
     <li><a href="{% url 'blog' %}">BLOGS</a></li>
-    <li><a href="#join-us">JOIN US</a></li>
-    <li><a href="#case-studies">CASE STUDIES</a></li>
+    <li><a href="{% url 'joinus' %}">JOIN US</a></li>
+    <li><a href="{% url 'case' %}">CASE STUDIES</a></li>
     <li><a href="#contact">CONTACT US</a></li>
   </ul>
-
+</div>
+ 
   <!-- Desktop Navbar -->
-  <div class="hidden md:block z-50 relative">
-    <div class="absolute inset-x-0 top-0 md:flex justify-end px-32 mt-2">
-      <div class="w-[862px] h-14 bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl overflow-hidden mt-4" id="main-navbar">
-        <div class="inline-flex justify-start items-center gap-7 pl-14 pr-[55.7px] h-full">
-          <ul class="flex justify-start items-center gap-7">
-            <li><a href="#about" class="text-white text-base font-medium font-Poppins leading-normal nav-link" aria-current="page">ABOUT</a></li>
-            <li><a href="#services" class="text-white text-base font-medium font-Poppins leading-normal nav-link">SERVICES</a></li>
-            <li><a href="{% url 'blog' %}" class="text-white text-base font-medium font-Poppins leading-normal nav-link">BLOGS</a></li>
-            <li><a href="{% url 'joinus' %}" class="text-white text-base font-medium font-Poppins leading-normal nav-link">JOIN US</a></li>
-            <li><a href="{% url 'case' %}" class="text-white text-base font-medium font-Poppins leading-normal nav-link" aria-current="page">CASE STUDIES</a></li>
-            <li><a href="#contact" class="text-white text-base font-medium font-Poppins leading-normal nav-link ">CONTACT US</a></li>
-           </ul>
+<div class="hidden md:block z-50 relative">
+ <div class="absolute inset-x-0 top-0 flex justify-end px-4 sm:px-6 md:px-15 lg:px-40 xl:px-48 mt-2 min-[880px]:mx-auto min-[900px]:mr-32 ">
 
-          <!-- Logo -->
-        <a href="{% url 'home' %}">
-          <img class="w-28 h-14" src="{% static 'myINT/images/intlogo.png' %}" alt="Logo" />
+    <div class="max-w-[862px]  w-full h-14 bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl overflow-hidden mt-2" id="main-navbar">
+
+       <div class="flex items-center gap-4 sm:gap-6 md:gap-7 pl-4 md:pl-12 h-full pr-4 md:pr-[55px]">
+        <!-- Left Links -->
+        <ul class="flex items-center gap-4 md:gap-7 justify-center w-full h-full">
+          <li><a href="#about" class="text-white min-[890px]:text-base text-sm font-medium font-Poppins leading-normal">ABOUT</a></li>
+          <li><a href="#services" class="text-white min-[890px]:text-base text-sm font-medium font-Poppins leading-normal">SERVICES</a></li>
+          <li><a href="{% url 'blog' %}" class="{% if current_page == 'blog' %}bg-white text-black  min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">BLOGS</a></li>
+          <li><a href="{% url 'joinus' %}" class="{% if current_page == 'joinus' %}bg-white text-black min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">JOIN US</a></li>
+          <li><a href="{% url 'case' %}" class="{% if current_page == 'casestudies' %}bg-white text-black min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">CASE STUDIES</a></li>
+          <li><a href="#contact" class="text-white text-base font-medium font-Poppins leading-normal whitespace-nowrap">CONTACT US</a></li>
+          <li>
+             <a href="{% url 'home' %}" class="flex shrink-0">
+          <img class="h-12 sm:h-14 md:h-14 lg:h-16 w-auto max-w-[112px] block" src="{% static 'myINT/images/intlogo.png' %}" alt="Logo" />
         </a>
-        </div>
+          </li>
+        </ul>
+
+        <!-- Logo on right -->
+       
       </div>
+
     </div>
   </div>
+</div>
+
+
+
 
 </div>
 
@@ -80,10 +96,16 @@
         document.getElementById('mobile-menu').classList.toggle('hidden');
     });
     </script>
-    <div class="relative z-10 pt-[160px] mx-auto max-w-screen-xl pb-10">
-     {% block Page %}
-      {% endblock %}
-    </div>
+    <div class="relative z-10 
+  pt-[80px]           <!-- base mobile -->
+  sm:pt-[100px]       <!-- small tablet -->
+  md:pt-[140px]       <!-- medium tablet -->
+  lg:pt-[140px]       <!-- desktop -->
+  xl:pt-[160px]       <!-- large desktop -->
+  mx-auto max-w-screen-xl pb-10">
+  {% block Page %}{% endblock %}
+</div>
+
       <!-- Main Content -->
     
         {% block content %}

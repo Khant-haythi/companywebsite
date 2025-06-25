@@ -40,274 +40,349 @@
  
 {% block content %}
 <!-- Content Overlay -->
- <main class="relative z-10 pt-[320px] sm:pt-[360px] md:pt-[420px] px-4 pb-10 md:pb-16 lg:pb-20 mx-auto max-w-screen-xl overflow-hidden">
+ <main class="relative z-10 pt-[440px] sm:pt-[400px] md:pt-[450px] lg:pt-[440px] px-4 pb-10 md:pb-16 lg:pb-20 mx-auto max-w-screen-xl overflow-hidden">
 
-<div class="relative px-4 py-6  ">
+<div class="relative px-4 py-6">
   <!-- Heading -->
   <div class="text-center text-white text-base sm:text-lg md:text-xl font-bold font-Poppins leading-normal mb-4">
     TRUSTED TECHNOLOGY PARTNERS
   </div>
 
-  <!-- Logo Container -->
-  <div class="w-full max-w-[583px] mx-auto overflow-x-auto pb-4 hide-scrollbar">
-    <div class="flex items-center gap-6 px-2 py-2 bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl">
-      <img class="w-24 h-16 flex-shrink-0 sm:w-20 sm:h-14 md:w-24 md:h-16" src="{% static 'myINT/images/Dell_EMC_logo.svg.svg' %}" alt="Dell EMC" />
-      <img class="w-24 h-16 flex-shrink-0 sm:w-20 sm:h-14 md:w-24 md:h-16" src="{% static 'myINT/images/Juniper_Networks-Logo.wine.svg' %}" alt="Juniper" />
-      <img class="w-24 h-16 flex-shrink-0 sm:w-20 sm:h-14 md:w-24 md:h-16" src="{% static 'myINT/images/Veritas_Technologies_logo.svg.svg' %}" alt="Veritas" />
-      <img class="w-24 h-16 flex-shrink-0 sm:w-20 sm:h-14 md:w-24 md:h-16" src="{% static 'myINT/images/Nutanix-Logo.wine.svg' %}" alt="Nutanix" />
-      <img class="w-24 h-16 flex-shrink-0 sm:w-20 sm:h-14 md:w-24 md:h-16" src="{% static 'myINT/images/PaloAltoNetworks_2020_Logo.svg.svg' %}" alt="Palo Alto Networks" />
+  <!-- Scrollable Logo Container aligned left -->
+  <div class="w-full overflow-x-auto">
+    <div class="flex items-center gap-6 px-5 py-2 bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl w-fit justify-center mx-auto">
+      <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Dell_EMC_logo.svg.svg' %}" alt="Dell EMC" />
+      <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Juniper_Networks-Logo.wine.svg' %}" alt="Juniper" />
+      <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Veritas_Technologies_logo.svg.svg' %}" alt="Veritas" />
+      <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Nutanix-Logo.wine.svg' %}" alt="Nutanix" />
+      <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/PaloAltoNetworks_2020_Logo.svg.svg' %}" alt="Palo Alto Networks" />
     </div>
   </div>
 </div>
+
+
 
 <div class="prose prose-invert max-w-none">
     <!-- Home Section -->
-  <section id="home" class="py-16">
-  <div class="max-w-[1170px] mx-auto relative z-20 ">
-  <div class=" relative z-10 mt-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
+ <section id="about" class="py-16">
+  <div class="max-w-[1170px] mx-auto relative z-20">
+    <div class="relative z-10 mt-16 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
 
-  <!-- Card 1: In Order To -->
-  <div class="flex-1 min-w-[280px] max-w-xl h-auto relative rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 backdrop-blur-[2px] overflow-hidden px-3">
-    <div class="p-4 flex flex-col gap-2.5">
-      <img class="w-36 h-36" src="{% static 'myINT/images/Earth_Icon.png' %}" />
-      <div class="text-zinc-900 text-xl font-bold font-Poppins leading-normal"></div>
-       <div class="w-60 justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">In order to deliver innovative and cost-effective business technology solutions to our customers,<br/>we’ve established number of long-term global relationships with leading industry partners</div>
+      <!-- Card 1: In Order To -->
+      <div class="flex-1 min-w-[280px] max-w-xl h-auto relative rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 backdrop-blur-[2px] overflow-hidden px-3">
+        <div class="p-4 flex flex-col gap-2.5">
+          <img class="w-36 h-36" src="{% static 'myINT/images/Earth_Icon.png' %}" />
+          <div class="text-zinc-900 text-xl font-bold font-Poppins leading-normal"></div>
+          <div class="w-60 justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">In order to deliver innovative and cost-effective business technology solutions to our customers,<br/>we’ve established number of long-term global relationships with leading industry partners</div>
+        </div>
+      </div>
+
+      <!-- Card 2: We Offer -->
+      <div class="flex-1 min-w-[280px] max-w-xl h-auto relative rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 backdrop-blur-[2px] overflow-hidden px-3">
+        <div class="p-4 flex flex-col gap-2.5">
+          <img class="w-36 h-36" src="{% static 'myINT/images/WeOffer_Icon.png' %}" />
+          <div class="text-zinc-900 text-xl font-bold font-Poppins leading-normal">WE OFFER</div>
+          <div class="w-64 justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">innovative technology solutions<br/>and managed services to<br/>accelerate our customer<br/>business’s growth.<br/>We simplify technology,<br/>optimized the cost<br/>and enable your<br/>business growth.</div>
+        </div>
+      </div>
+
+      <!-- Card 3: We Are -->
+      <div class="flex-1 min-w-[280px] max-w-xl h-auto relative rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 backdrop-blur-[2px] overflow-hidden px-3">
+        <div class="p-4 flex flex-col gap-2.5">
+          <img class="w-36 h-36" src="{% static 'myINT/images/WeAre_Icon.png' %}" />
+          <div class="text-zinc-900 text-xl font-bold font-Poppins leading-normal">WE ARE</div>
+          <div class="w-64 justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">innovative technology solutions<br/>and managed services to<br/>accelerate our customer<br/>business’s growth.<br/>We simplify technology,<br/>optimized the cost<br/>and enable your<br/>business growth.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- Card 2: We Offer -->
-  <div class="flex-1 min-w-[280px] max-w-xl h-auto relative rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 backdrop-blur-[2px] overflow-hidden px-3">
-    <div class="p-4 flex flex-col gap-2.5">
-      <img class="w-36 h-36" src="{% static 'myINT/images/WeOffer_Icon.png' %}" />
-      <div class="text-zinc-900 text-xl font-bold font-Poppins leading-normal">WE OFFER</div>
-        <div class="w-64 justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">innovative technology solutions<br/>and managed services to<br/>accelerate our customer<br/>business’s growth.<br/>We simplify technology,<br/>optimized the cost<br/>and enable your<br/>business growth.</div>
-    </div>
-  </div>
-
-  <!-- Card 3: We Are -->
-  <div class="flex-1 min-w-[280px] max-w-xl h-auto relative rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-800 backdrop-blur-[2px] overflow-hidden px-3">
-    <div class="p-4 flex flex-col gap-2.5">
-      <img class="w-36 h-36" src="{% static 'myINT/images/WeAre_Icon.png' %}" />
-      <div class="text-zinc-900 text-xl font-bold font-Poppins leading-normal">WE ARE</div>
-       <div class="w-64 justify-start text-zinc-900 text-base font-normal font-Poppins leading-normal">innovative technology solutions<br/>and managed services to<br/>accelerate our customer<br/>business’s growth.<br/>We simplify technology,<br/>optimized the cost<br/>and enable your<br/>business growth.</div>
-    </div>
-  </div>
-
-</div>
-  </div>
-  <div class="mt-24">
-
-  </div>
-  
- <!-- Desktop Version (only shown on lg+) -->
-<div class="hidden lg:block relative max-w-[1170px] h-[377px] px-3 mx-auto">
-  <div style="width: 100%; height: 100%; position: relative; box-shadow: 0px 0px 0px; filter: blur(0px)">
-    <div style="width: 1170px; height: 377px; left: 0px; top: 0px; position: absolute; border-radius: 50px; border: 2px #005B95 solid"></div>
-    <div style="width: 312px; left: 100px; top: 160px; position: absolute; color: #1C1C1C; font-size: 20px; font-family: Poppins; font-weight: 400; line-height: 30px; word-wrap: break-word">To develop world class solutions<br/>and services to our ​customers<br/>and ensure they stay as market leaders<br/>in the business​</div>
-    <div style="width: 212px; left: 858px; top: 160px; position: absolute; text-align: right; color: #1C1C1C; font-size: 20px; font-family: Poppins; font-weight: 400; line-height: 30px; word-wrap: break-word">Value for clients<br/>by innovation and <br/>continuous adoption​</div>
-    <div style="width: 168px; height: 50px; left: 91px; top: 45px; position: absolute; color: #1C1C1C; font-size: 48px; font-family: Poppins; font-weight: 500; line-height: 60px; word-wrap: break-word">VISION</div>
-   <!-- Gradient Divider 1 -->
-    <div class="relative left-[90px] top-[110px]">
-      <div class="w-full max-w-[100px] h-[2px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
-    </div>
-    <div style="width: 218px; height: 48px; left: 872px; top: 45px; position: absolute; color: #1C1C1C; font-size: 48px; font-family: Poppins; font-weight: 500; line-height: 60px; word-wrap: break-word">MISSION</div>
+  <!-- Desktop Version (only shown on lg+) -->
+<div class="hidden lg:block mt-24 ">
+  <div class="max-w-[1170px] mx-auto border-2 border-[#005B95] rounded-[50px] pt-10 px-20  relative">
     
-    <!-- Gradient Divider 1 -->
-    <div class="relative left-[970px] top-[110px]">
-      <div class="w-full max-w-[100px] h-[2px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
+    <div class="flex justify-between items-start gap-8">
+      
+      <!-- Vision -->
+      <div class="flex-1">
+        <h2 class="text-3xl xl:text-4xl font-semibold font-poppins mb-2">VISION</h2>
+        <div class="w-24 h-[2px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100 mb-4"></div>
+        <p class="text-base xl:text-lg leading-relaxed font-poppins text-[#1C1C1C]">
+          To develop world class solutions<br/>and services to our ​customers<br/>and ensure they stay as <br/> market leaders<br/>in the business​
+        </p>
+      </div>
+
+      <!-- Middle Image -->
+      <div class="flex-shrink-0 w-[180px] xl:w-[230px]">
+        <img src="{% static 'myINT/images/unnamed 1.svg' %}" class="w-full h-auto mx-auto" alt="Visual" />
+      </div>
+
+      <!-- Mission -->
+      <div class="flex-1 text-right">
+        <h2 class="text-3xl xl:text-4xl font-semibold font-poppins mb-2">MISSION</h2>
+        <div class="w-24 h-[2px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100 mb-4 ml-auto"></div>
+        <p class="text-base xl:text-lg leading-relaxed font-poppins text-[#1C1C1C]">
+         Value for clients<br/>by innovation and <br/>continuous adoption​
+        </p>
+      </div>
+
     </div>
-    <img style="width: 235.73px; height: 307px; left: 467.63px; top: 35px; position: absolute" src="{% static 'myINT/images/unnamed 1.svg' %}" />
   </div>
 </div>
 
-<!-- Mobile Version (stacked layout) -->
-<div class="block lg:hidden p-6 bg-white/10 rounded-3xl backdrop-blur-md mx-4 my-8 border-2 border-[#005B95] ">
-  <!-- VISION -->
-  <h2 class="text-3xl font-bold text-black mb-2">VISION</h2>
-  <div class="w-full max-w-[100px] left-[20px] h-[3px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
-  <p class="text-base text-black mb-6">
-    To develop world class solutions and services to our customers and ensure they stay as market leaders in the business.
-  </p>
+  <!-- Mobile Version (only shown on smaller screens) -->
+  <div class="block lg:hidden mt-24 max-w-[1170px] mx-auto">
+    <div class="bg-white/10 rounded-3xl backdrop-blur-md border-2 border-[#005B95] p-6">
+      <!-- VISION -->
+      <h2 class="text-3xl font-bold text-black mb-2">VISION</h2>
+      <div class="w-full max-w-[100px] left-[20px] h-[3px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
+      <p class="text-base text-black mb-6">
+        To develop world class solutions and services to our customers and ensure they stay as market leaders in the business.
+      </p>
 
-  <!-- Image Centered -->
-  <img src="{% static 'myINT/images/unnamed 1.svg' %}" alt="Vision/Mission" class="w-[50%] sm:w-[30%] mx-auto mb-6 object-contain" />
+      <!-- Image Centered -->
+      <img src="{% static 'myINT/images/unnamed 1.svg' %}" alt="Vision/Mission" class="w-[50%] sm:w-[30%] mx-auto mb-6 object-contain" />
 
-  <!-- MISSION -->
-  <h2 class="text-3xl font-bold text-black mb-2">MISSION</h2>
-  <div class="w-full max-w-[100px] left-[20px] h-[3px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
-  <p class="text-base text-black">
-    Value for clients by innovation and continuous adoption.
-  </p>
-</div>
+      <!-- MISSION -->
+      <h2 class="text-3xl font-bold text-black mb-2">MISSION</h2>
+      <div class="w-full max-w-[100px] left-[20px] h-[3px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
+      <p class="text-base text-black">
+        Value for clients by innovation and continuous adoption.
+      </p>
+    </div>
+  </div>
 </section>
-
 
 <!-- SERVICE SESSION -->
 <section id="services" class="py-16">
   <div class="max-w-[1170px] px-4 mx-auto">
-    
+
     <!-- Section Title -->
     <div class="text-zinc-900 text-3xl font-medium font-Poppins leading-10 mb-10 text-center lg:text-left">
       SOLUTIONS & SERVICES
     </div>
 
     <!-- Divider Line -->
-   <div class="w-full max-w-[480px] mx-auto h-[3px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
+    <div class="w-full max-w-[480px] mx-auto h-[3px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
 
-    <!-- First Row of Services -->
-    <div class="flex flex-wrap justify-start items-start gap-7 mb-10 pt-20">
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 [@media(width:540px)]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 mt-10">
+
 
       <!-- Service Card 1: Networking & Computing -->
-      <div class="w-full sm:w-[calc(50%-14px)] lg:w-64 relative inline-flex flex-col justify-start items-start gap-5">
-        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
-        <div class="self-stretch text-zinc-900 text-xl font-semibold font-['Poppins'] leading-10">Networking & Computing</div>
-        <div class="self-stretch text-zinc-900/80 text-base font-normal font-Poppins leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
-        <div class="inline-flex justify-start items-center gap-2.5">
-          <div class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</div>
-          <img class="w-2 h-3" src="{% static 'myINT/images/vector.svg' %}" alt="Arrow Right" />
+      <div class="w-full relative flex flex-col justify-start  items-start gap-5 ">
+        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px] flex justify-center items-center">
+           <img class=" w-52 h-52  shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25),_-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="/static/myINT/images/network.png" alt="Networking & Computing" />
         </div>
-        <img class="w-52 h-52 absolute left-[30px] top-[18px] shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/network.png' %}" />
+        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Networking & Computing</div>
+        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
+          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+        </div>
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+          <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
+          <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
+        </div>
+       
       </div>
 
       <!-- Service Card 2: Cyber Security Solutions -->
-      <div class="w-full sm:w-[calc(50%-14px)] lg:w-64 relative inline-flex flex-col justify-start items-start gap-5">
-        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
-        <div class="self-stretch text-zinc-900 text-xl font-semibold font-Poppins leading-10">Cyber Security Solutions</div>
-        <div class="self-stretch text-zinc-900/80 text-base font-normal font-Poppins leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
-        <div class="inline-flex justify-start items-center gap-2.5">
-          <div class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</div>
-          <img class="w-2 h-3" src="{% static 'myINT/images/vector.svg' %}" alt="Arrow Right" />
+      <div class="w-full relative flex flex-col justify-start items-start gap-5">
+        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px] flex justify-center items-center">
+          <img class="w-28 h-36  shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25),_-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="/static/myINT/images/2.svg" alt="Cyber Security Solutions" />
         </div>
-        <img class="w-28 h-36 absolute left-[75px] top-[47px] shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/2.svg' %}" />
+        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Cyber Security Solutions</div>
+        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
+          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+        </div>
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+          <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
+          <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
+        </div>
+        
       </div>
 
       <!-- Service Card 3: Cloud & Data Center -->
-      <div class="w-full sm:w-[calc(50%-14px)] lg:w-64 relative inline-flex flex-col justify-start items-start gap-5">
-        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
-        <div class="self-stretch text-zinc-900 text-xl font-semibold font-Poppins leading-10">Cloud & Data Center</div>
-        <div class="self-stretch text-zinc-900/80 text-base font-normal font-Poppins leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
-        <div class="inline-flex justify-start items-center gap-2.5">
-          <div class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</div>
-          <img class="w-2 h-3" src="{% static 'myINT/images/vector.svg' %}" alt="Arrow Right" />
+      <div class="w-full relative flex flex-col justify-start items-start gap-5">
+        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px] flex justify-center items-center">
+          <img class="w-64 h-52  shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25),_-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="/static/myINT/images/cloud.svg" alt="Cloud & Data Center" />
         </div>
-        <img class="w-64 h-52 absolute left-[6px] top-[15px] shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/cloud.svg' %}" />
+        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Cloud & Data Center</div>
+        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
+          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+        </div>
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+          <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
+          <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
+        </div>
+        
       </div>
 
       <!-- Service Card 4: Application Solutions -->
-      <div class="w-full sm:w-[calc(50%-14px)] lg:w-64 relative inline-flex flex-col justify-start items-start gap-5">
-        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900"></div>
-        <div class="self-stretch text-zinc-900 text-xl font-semibold font-Poppins leading-10">Application Solutions</div>
-        <div class="self-stretch text-zinc-900/80 text-base font-normal font-Poppins leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
-        <div class="inline-flex justify-start items-center gap-2.5">
-          <div class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</div>
-          <img class="w-2 h-3" src="{% static 'myINT/images/vector.svg' %}" alt="Arrow Right" />
+      <div class=" w-full relative flex flex-col justify-start items-start gap-5">
+        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px] flex justify-center items-center">
+           <img class="w-56 h-40  shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25),_-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="/static/myINT/images/app.svg" alt="Application Solutions" />
         </div>
-        <img class="w-56 h-40 absolute left-[26px] top-[43px] shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/app.svg' %}" />
+        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Application Solutions</div>
+        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
+          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+        </div>
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+          <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
+          <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
+        </div>
+       
       </div>
 
-    </div>
-
-    <!-- Second Row of Services -->
-    <div class="flex flex-wrap justify-start items-start gap-7">
-
       <!-- Service Card 5: Business Communication -->
-      <div class="w-full sm:w-[calc(50%-14px)] lg:w-64 relative inline-flex flex-col justify-start items-start gap-5">
-        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
-        <div class="self-stretch text-zinc-900 text-xl font-semibold font-Poppins leading-10">Business Communication</div>
-        <div class="self-stretch text-zinc-900/80 text-base font-normal font-Poppins leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
-        <div class="inline-flex justify-start items-center gap-2.5">
-          <div class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</div>
-          <img class="w-2 h-3" src="{% static 'myINT/images/vector.svg' %}" alt="Arrow Right" />
+      <div class=" w-full relative flex flex-col justify-start items-start gap-5">
+        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px] flex justify-center items-center">
+          <img class="w-44 h-40  shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25),_-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="/static/myINT/images/bc.svg" alt="Business Communication" />
         </div>
-        <img class="w-44 h-40 absolute left-[48px] top-[43px] shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/bc.svg' %}" />
+        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Business Communication</div>
+        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
+          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+        </div>
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+          <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
+          <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
+        </div>
+        
       </div>
 
       <!-- Service Card 6: Business Communication -->
-      <div class="w-full sm:w-[calc(50%-14px)] lg:w-64 relative inline-flex flex-col justify-start items-start gap-5">
-        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
-        <div class="self-stretch text-zinc-900 text-xl font-semibold font-Poppins leading-10">Business Communication</div>
-        <div class="self-stretch text-zinc-900/80 text-base font-normal font-Poppins leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
-        <div class="inline-flex justify-start items-center gap-2.5">
-          <div class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</div>
-          <img class="w-2 h-3" src="{% static 'myINT/images/vector.svg' %}" alt="Arrow Right" />
+      <div class="w-full relative flex flex-col justify-start items-start gap-5">
+        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px] flex justify-center items-center">
+           <img class="w-44 h-40  shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25),_-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="/static/myINT/images/bc.svg" alt="Business Communication" />
         </div>
-        <img class="w-44 h-40 absolute left-[48px] top-[43px] shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/bc.svg' %}" />
+        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Business Communication</div>
+        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
+          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+        </div>
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+          <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
+          <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
+        </div>
+       
       </div>
 
       <!-- Service Card 7: Strategy & Consulting -->
-      <div class="w-full sm:w-[calc(50%-14px)] lg:w-64 relative inline-flex flex-col justify-start items-start gap-5">
-        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
-        <div class="self-stretch text-zinc-900 text-xl font-semibold font-Poppins leading-10">Strategy & Consulting</div>
-        <div class="self-stretch text-zinc-900/80 text-base font-normal font-Poppins leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
-        <div class="inline-flex justify-start items-center gap-2.5">
-          <div class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</div>
-          <img class="w-2 h-3" src="{% static 'myINT/images/vector.svg' %}" alt="Arrow Right" />
+      <div class="w-full relative flex flex-col justify-start items-start gap-5">
+        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px] flex justify-center items-center">
+           <img class="w-64 h-52  shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25),_-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="/static/myINT/images/strategy.svg" alt="Strategy & Consulting" />
         </div>
-        <img class="w-64 h-52 absolute left-[10px] top-[18px] shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/strategy.svg' %}" />
+        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Strategy & Consulting</div>
+        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
+          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+        </div>
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+          <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
+          <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
+        </div>
+       
       </div>
 
       <!-- Service Card 8: Application Solutions -->
-      <div class="w-full sm:w-[calc(50%-14px)] lg:w-64 relative inline-flex flex-col justify-start items-start gap-5">
-        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px]"></div>
-        <div class="self-stretch text-zinc-900 text-xl font-semibold font-Poppins leading-10">Application Solutions</div>
-        <div class="self-stretch text-zinc-900/80 text-base font-normal font-Poppins leading-normal">Reliable, scalable network and computing solutions that power seamless connectivity and business performance</div>
-        <div class="inline-flex justify-start items-center gap-2.5">
-          <div class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</div>
-          <img class="w-2 h-3" src="{% static 'myINT/images/vector.svg' %}" alt="Arrow Right" />
+      <div class="w-full relative flex flex-col justify-start items-start gap-5">
+        <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px] flex justify-center items-center">
+          <img class="w-56 h-40 shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25),_-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="/static/myINT/images/app.svg" alt="Application Solutions" />
         </div>
-        <img class="w-56 h-40 absolute left-[20px] top-[44px] shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/app.svg' %}" />
+        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Application Solutions</div>
+        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
+          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+        </div>
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+          <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
+          <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
+        </div>
+        
       </div>
 
     </div>
   </div>
 </section>
+
   
 <!-- TEAM SECTION -->
 <section id="team" class="py-16">
 
-  <!-- DESKTOP VIEW-->
-  <div class="hidden lg:block max-w-[1170px] h-[810px] relative mx-auto">
+  <!-- DESKTOP VIEW (Responsive) -->
+<div class="hidden lg:block w-full max-w-[1170px] min-h-[810px] relative mx-auto px-4">
 
-    <!-- Title + Divider -->
-    <div class="w-[1170px] h-16 left-0 top-0 absolute">
-      <div class="left-[348px] top-0 absolute justify-start text-zinc-900 text-3xl font-medium font-Poppins leading-10">YOUNG BUT WELL EXPERIENCED</div>
-      <div class="w-full max-w-[580px] left-[300px] mx-auto top-[65px] absolute h-[3px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
+  <!-- Title + Divider -->
+  <div class="relative w-full h-20 mb-6">
+    <div class="text-center text-zinc-900 text-3xl font-medium font-Poppins leading-10">
+      YOUNG BUT WELL EXPERIENCED
+    </div>
+    <div class="mx-auto mt-4 h-[3px] w-[580px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
+  </div>
+
+  <!-- Team Info + Stats -->
+  <div class="flex justify-between gap-12 items-start relative mb-16">
+    <!-- Left Info Box -->
+    <div class="flex-1 max-w-[520px] h-[364px] rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-700 overflow-hidden relative p-6">
+      <p class="text-zinc-900 text-base font-medium font-Poppins leading-normal w-[380px]">
+        Work with our team of skilled developers and experienced architects, committed to providing top-tier support and solutions tailored to help your business thrive.
+      </p>
+      <button class="mt-[165px] px-3 py-3.5 bg-gradient-to-br from-sky-800 to-sky-500 rounded-[50px] text-white text-base font-semibold font-Poppins shadow">
+        Check Our Team
+      </button>
+      <div class="absolute top-6 right-6 w-4 h-4 bg-green-600 rounded-full border border-slate-900"></div>
+      <div class="absolute top-4 right-5 w-7 h-7 rounded-full border border-slate-900"></div>
+      <img class="absolute bottom-0 right-4 w-72 h-48 object-contain" src="{% static 'myINT/images/Team1.svg' %}" />
     </div>
 
-    <!-- Team Info + Stats Boxes -->
-    <div class="max-w-[1170px] h-[364px] left-0 top-[165px] absolute">
-      <div class="w-[535px] h-[364px] left-0 top-0 absolute rounded-[50px] outline outline-2 outline-offset-[-2px] outline-sky-700 overflow-hidden">
-        <div class="w-96 left-[30px] top-[30px] absolute justify-start text-zinc-900 text-base font-medium font-Poppins leading-normal">Work with our team of skilled developers and experienced architects, committed to providing top-tier support and solutions tailored to help your business thrive.</div>
-        <div class="px-5 py-3.5 left-[30px] top-[279px] absolute bg-gradient-to-br from-sky-800 to-sky-500 rounded-[50px] shadow-[0px_2px_2px_0px_rgba(0,0,0,0.10)] inline-flex justify-center items-center gap-2.5">
-          <div class="justify-start text-white text-base font-semibold font-['Poppins'] leading-normal">Check Our Team</div>
-        </div>
-        <div class="w-4 h-4 left-[483px] top-[36px] absolute bg-green-600 rounded-full border border-slate-900"></div>
-        <div class="w-7 h-7 left-[477px] top-[30px] absolute rounded-full border border-slate-900"></div>
-        <img class="w-72 h-48 left-[263px] top-[175px] absolute" src="{% static 'myINT/images/Team1.svg' %}" />
-      </div>
-
-      <div class="w-[535px] h-[364px] left-[635px] top-0 absolute bg-gradient-to-br from-sky-800 to-sky-500 rounded-[50px]"></div>
-      <div class="left-[681px] top-[177px] absolute justify-start text-white text-2xl font-normal font-Poppins leading-normal [text-shadow:_1px_1px_4px_rgb(64_77_102_/_0.20)]">OVER</div>
-      <div class="w-44 h-0 left-[790px] top-[96px] absolute origin-top-left rotate-90 outline outline-2 outline-offset-[-1px] outline-white"></div>
-      <div class="left-[820px] top-[137px] absolute justify-start text-white text-7xl font-normal font-['HUMANISM-DEMO'] leading-[90px] [text-shadow:_2px_2px_4px_rgb(255_255_255_/_0.25)]">24</div>
-      <div class="w-40 left-[962px] top-[154px] absolute justify-start text-white text-2xl font-normal font-Poppins leading-loose [text-shadow:_1px_1px_4px_rgb(64_77_102_/_0.20)]">CORPORATE PARTNERS</div>
+    <!-- Right Gradient Box -->
+<div class="flex-1 max-w-[520px] h-[364px] bg-gradient-to-br from-sky-800 to-sky-500 rounded-[50px] relative overflow-hidden">
+  
+    <!-- OVER -->
+    <div class="absolute left-[10%] top-[50%] text-white text-2xl font-normal font-['Poppins'] leading-normal [text-shadow:_1px_1px_4px_rgb(64_77_102_/_0.20)]">
+      OVER
     </div>
 
-    <!-- Icons Row -->
-    <div class="w-[1170px] h-52 top-[609px] absolute mx-auto">
-      <div class="w-32 left-[38px] top-[139px] absolute justify-start text-zinc-900 text-base font-medium font-Poppins leading-loose">Fully Managed</div>
-      <div class="w-48 left-[253px] top-[139px] absolute justify-start text-zinc-900 text-base font-medium font-Poppins leading-loose">Years Of Experience & Technical Expertise</div>
-      <div class="w-40 left-[503px] top-[139px] absolute justify-start text-zinc-900 text-base font-medium font-Poppins leading-loose">Open Standards</div>
-      <div class="w-48 left-[728px] top-[139px] absolute justify-start text-zinc-900 text-base font-medium font-Poppins leading-loose">Significant Cost Savings</div>
-      <div class="w-52 left-[960px] top-[139px] absolute justify-start text-zinc-900 text-base font-medium font-Poppins leading-loose">Seamless Integration Into Your Existing Platform</div>
-      <img class="w-52 h-28 left-0 top-0 absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/Icon1 1.png' %}" />
-      <img class="w-52 h-28 left-[240px] top-[9px] absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/Icon5 1.png' %}" />
-      <img class="w-52 h-28 left-[480px] top-0 absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/Icon3 1.png' %}" />
-      <img class="w-52 h-28 left-[720px] top-[2px] absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/Icon2 1.png' %}" />
-      <img class="w-52 h-28 left-[960px] top-[2px] absolute shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)] shadow-[-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/Icon4 1.png' %}" />
+    <!-- Line (rotated) -->
+    <div class="absolute w-[35%] h-0 left-[30%] top-[30%] origin-top-left rotate-90 outline outline-2 outline-offset-[-1px] outline-white"></div>
+
+    <!-- 24 -->
+    <div class="absolute left-[40%] top-[42%] text-white text-7xl font-normal font-['HUMANISM-DEMO'] leading-[90px] [text-shadow:_2px_2px_4px_rgb(255_255_255_/_0.25)]">
+      24
     </div>
+
+    <!-- CORPORATE PARTNERS -->
+    <div class="absolute w-40 left-[65%] top-[43%] text-white text-2xl font-normal font-['Poppins'] leading-loose [text-shadow:_1px_1px_4px_rgb(64_77_102_/_0.20)]">
+      CORPORATE PARTNERS
+    </div>
+
+</div>
+
 
   </div>
+
+  <!-- Icons Row -->
+  <div class="grid grid-cols-5 gap-6 items-start">
+    <div class="text-center">
+      <img class="mx-auto w-52 h-28 shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/Icon1 1.png' %}" />
+      <p class="mt-4 text-zinc-900 text-base font-medium font-Poppins leading-loose">Fully Managed</p>
+    </div>
+    <div class="text-center">
+      <img class="mx-auto w-52 h-28 shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/Icon5 1.png' %}" />
+      <p class="mt-4 text-zinc-900 text-base font-medium font-Poppins leading-loose">Years Of Experience & Technical Expertise</p>
+    </div>
+    <div class="text-center">
+      <img class="mx-auto w-52 h-28 shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/Icon3 1.png' %}" />
+      <p class="mt-4 text-zinc-900 text-base font-medium font-Poppins leading-loose">Open Standards</p>
+    </div>
+    <div class="text-center">
+      <img class="mx-auto w-52 h-28 shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/Icon2 1.png' %}" />
+      <p class="mt-4 text-zinc-900 text-base font-medium font-Poppins leading-loose">Significant Cost Savings</p>
+    </div>
+    <div class="text-center">
+      <img class="mx-auto w-52 h-28 shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25)]" src="{% static 'myINT/images/Icon4 1.png' %}" />
+      <p class="mt-4 text-zinc-900 text-base font-medium font-Poppins leading-loose">Seamless Integration Into Your Existing Platform</p>
+    </div>
+  </div>
+</div>
+
 
   <!-- MOBILE VIEW (Only shown on sm/md screens) -->
   <div class="lg:hidden px-4">
@@ -390,9 +465,9 @@
       <a href="{% url 'blog_detail' blog.id %}">
         <div class="relative">
           <img class="w-full h-80 object-cover rounded-[50px]" src="{{ blog.image.url }}" alt="Nvidia Blog" />
-          <div class="absolute top-5 left-5 flex gap-4">
-            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-black bg-white text-base font-normal font-poppins">Business</span>
-            <span class="px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
+          <div class="absolute top-5 left-5 flex gap-4 sm:gap-3 md:gap-4 lg:gap-4 ">
+            <span class="px-3 sm:px-4 md:px-4 lg:px-4  py-2.5 rounded-[50px] outline outline-white text-black bg-white text-base font-normal font-poppins">Business</span>
+            <span class="px-3 sm:px-4 md:px-4 lg:px-4 py-2.5 rounded-[50px] outline outline-white text-white text-base font-normal font-poppins">Technology</span>
           </div>
         </div>
       </a>

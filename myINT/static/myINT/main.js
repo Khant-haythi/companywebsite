@@ -27,7 +27,32 @@ const searchInput = document.getElementById("search-input");
         });
       });
     };
-    
+
+    // Select all nav-links
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    // Function to handle click events
+    function handleNavLinkClick(event) {
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+        });
+        event.target.classList.add('active');
+    }
+
+    // Attach click event listeners to each nav-link
+    navLinks.forEach(link => {
+        link.addEventListener('click', handleNavLinkClick);
+    });
+
+    // Set the active link based on the current URL
+    const currentUrl = window.location.href;
+    navLinks.forEach(link => {
+        if (link.href === currentUrl) {
+            link.classList.add('active');
+        }
+    });
+
+  // ================
   const slider = document.getElementById('slider');
   const dots = document.querySelectorAll('.dot');
 
