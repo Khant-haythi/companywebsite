@@ -30,9 +30,7 @@ class Tag(models.Model):
     
 class Blog(models.Model):
     title = models.CharField(max_length=500)
-    content = models.TextField(blank=True) # You can paste raw HTML here
-    # OR use RichTextField for WYSIWYG editor:
-    # content = RichTextField()
+    content = models.TextField(blank=True) 
     categories = models.ManyToManyField('Category', blank=True)
     image = models.FileField(upload_to='blog_images/', blank=True, null=True)
     tags = models.ManyToManyField('Tag', related_name='blogs')

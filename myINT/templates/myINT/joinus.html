@@ -4,12 +4,12 @@
 {% block title %}Join Us{% endblock %}
 
 {% block background %}
-<img class="w-full h-[750px] absolute overflow-hidden object-cover" src="{% static 'myINT/images/background.png' %}" alt="Background"/>
+<img class="w-full h-[750px] absolute overflow-hidden object-cover z-[-10]" src="{% static 'myINT/images/background.png' %}" alt="Background"/>
 {% endblock %}
 
 {% block Page %}
 <!-- Container -->
-<div class="max-w-[1170px] mx-auto mt-0 px-4">
+<div class="max-w-[1170px] relative mx-auto mt-0 px-4">
 
   <!-- Desktop Layout -->
   <!-- Use sm:block to show from small screens and up -->
@@ -52,14 +52,15 @@
     <img class="h-full w-full relative opacity-80 object-cover overflow-hidden inset-0 top-[-280px]" src="{% static 'myINT/images/Avators_Group.png' %}" />
 
     <!-- Profile Card -->
-    <div class="max-w-[852.21px] h-[1100px] relative mx-auto mt-[-230px] overflow-hidden">
-      <div class="relative w-full h-screen overflow-hidden">
-        <img class="absolute h-full w-full transform rotate-180 object-cover overflow-hidden" src="{% static 'myINT/images/Graphic.png' %}" />
-      </div>
+    <div class="max-w-[852.21px] h-[1000px] md:min-h-screen relative mx-auto mt-[-23%] overflow-x-auto">
+     
+        <img class="absolute insert-0 top-0 left-0 h-full w-full transform rotate-90 z-0 md:z-10  object-cover overflow-hidden" 
+            src="{% static 'myINT/images/Graphic.png' %}" />
+  
       <div class="w-6 h-6 left-[746px] top-[705px] absolute bg-blue-300/60 rounded-full"></div>
 
       <!-- Cards -->
-      <div class="w-64 h-96 py-4 left-[291px] top-0 absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2 overflow-hidden">
+      <div class="w-64 h-96 py-4 left-[291px] top-1 absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2 ">
         <div class="w-48 h-60 bg-gradient-to-br from-white via-sky-800 to-slate-900 rounded-[20px]">
           <img class="w-48 h-52 rounded-[20px]" src="{% static 'myINT/images/David.png' %}" />
         </div>
@@ -71,7 +72,7 @@
         </div>
       </div>
 
-      <div class="w-64 h-96 py-4 left-[-8px] top-[188px] absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2">
+      <div class="w-64 h-96 py-4 left-1 top-[188px] absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2">
         <div class="w-48 h-60 bg-gradient-to-br from-white via-sky-800 to-slate-900 rounded-[20px]">
           <img class="w-48 h-52 rounded-[20px]" src="{% static 'myINT/images/peter.png' %}" />
         </div>
@@ -83,7 +84,7 @@
         </div>
       </div>
 
-      <div class="w-64 h-96 py-4 left-[-8px] top-[588px] absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2">
+      <div class="w-64 h-96 py-4 left-1 top-[588px] absolute bg-white rounded-[20px] outline outline-[0.44px] outline-offset-[-0.44px] outline-black/40 inline-flex flex-col justify-start items-center gap-2">
         <div class="w-48 h-60 bg-gradient-to-br from-white via-sky-800 to-slate-900 rounded-[20px]">
           <img class="w-48 h-52 rounded-[20px]" src="{% static 'myINT/images/rachel.png' %}" />
         </div>
@@ -131,7 +132,9 @@
         </div>
       </div>
     </div>
-  </div>
+
+  
+</div>
 
   <!-- Mobile & Tablet Layout with Grid -->
   <div class="block md:hidden px-4 mt-4">
@@ -149,7 +152,7 @@
     </div>
 
     <!-- Responsive Grid -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 [@media(width:540px)]:grid-cols-2 sm:grid-cols-2 gap-6">
       
       <!-- David -->
       <div class="bg-white rounded-xl shadow-md overflow-hidden">
