@@ -26,3 +26,14 @@
     border-radius: 16px; /* Rounded corners like in the reference image */
     padding: 8px 16px; /* Adjust padding as needed */
 }
+
+/* Hide scrollbar for Webkit (Chrome, Safari) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
+}

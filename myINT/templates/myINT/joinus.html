@@ -3,6 +3,7 @@
 {% load static %}
 {% block title %}Join Us{% endblock %}
 
+
 {% block background %}
 <img class="w-full h-[750px] absolute overflow-hidden object-cover z-[-10]" src="{% static 'myINT/images/background.png' %}" alt="Background"/>
 {% endblock %}
@@ -52,10 +53,13 @@
     <img class="h-full w-full relative opacity-80 object-cover overflow-hidden inset-0 top-[-280px]" src="{% static 'myINT/images/Avators_Group.png' %}" />
 
     <!-- Profile Card -->
-    <div class="max-w-[852.21px] h-[1000px] md:min-h-screen relative mx-auto mt-[-23%] overflow-x-auto">
+    <div class="max-w-[852.21px] h-[1000px] md:min-h-screen relative mx-auto mt-[-23%] overflow-x-auto scrollbar-hide">
      
-        <img class="absolute insert-0 top-0 left-0 h-full w-full transform rotate-90 z-0 md:z-10  object-cover overflow-hidden" 
-            src="{% static 'myINT/images/Graphic.png' %}" />
+      <div 
+      class="absolute inset-0 h-full w-full transform rotate-90 z-0 md:z-10 bg-cover bg-no-repeat bg-center overflow-hidden" 
+      style="background-image: url(&quot;{% static 'myINT/images/Graphic.png' %}&quot;);">
+    </div>
+
   
       <div class="w-6 h-6 left-[746px] top-[705px] absolute bg-blue-300/60 rounded-full"></div>
 

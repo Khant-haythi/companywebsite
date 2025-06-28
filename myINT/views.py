@@ -1,6 +1,7 @@
+import os
 import re
 from django.utils.timezone import datetime
-from django.http import HttpResponse
+from django.http import FileResponse, HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.shortcuts import redirect
 import markupsafe
@@ -69,3 +70,7 @@ def blog_detail(request, blog_id):
     }
 
     return render(request, 'myINT/blogdetail.html', context)
+
+def download_company_profile(request):
+    file_path = os.path.join(os.path.dirname(__file__), 'ints-profile.pdf')
+    return FileResponse(open(file_path, 'rb'), content_type='application/pdf')
