@@ -449,18 +449,19 @@
 </section>
 
 <!-- BLOGS SECTION -->
+<!--
 <section class="px-4 py-10 max-w-screen-xl mx-auto">
-  <!-- Heading -->
+  
   <div class="text-center">
     <h2 class="text-3xl font-medium text-zinc-900 font-poppins">Blogs</h2>
     <div class="w-44 h-[3px] mt-2 mx-auto bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
   </div>
-    <!-- Blog Grid -->
+    
   <div id="blog-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-10 mt-16">
 {% for blog in blogs %}
     {% if blog.id %}
     {% if forloop.counter <= 4 %}
-    <!-- Article 1 -->
+    
     <div class="blog-card flex flex-col gap-4" data-category="{{ blog.categories.all.0.name }}">
       <a href="{% url 'blog_detail' blog.id %}">
         <div class="relative">
@@ -516,11 +517,12 @@
     </div>
   </div>
 
-<!-- Load More -->
   <div id="new-load-more-btn" class="mt-10 px-10 py-3 mx-auto  max-w-max rounded-[50px] outline outline-1 outline-offset-[-1px] outline-zinc-900 justify-center cursor-pointer">
     <div class="text-zinc-900 text-xl font-normal font-Poppins">Load More Article</div>
   </div>
-</section>
+</section> -->
+
+
 
 <!-- TESTIMONIALS SECTION -->
 <section id="TESTIMONIALS" class="py-16 max-w-screen-xl mx-auto px-4">

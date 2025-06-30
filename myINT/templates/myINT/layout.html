@@ -48,9 +48,9 @@
   <ul id="mobile-menu" class="hidden md:hidden absolute top-[72px] left-4 right-4 z-50 bg-neutral-500/20 backdrop-blur-2xl mx-4 rounded-lg p-4 space-y-3 text-white font-medium font-poppins text-base ">
     <li><a href="/home/#home">ABOUT</a></li>
     <li><a href="/home/#services">SERVICES</a></li>
-    <li><a href="{% url 'blog' %}">BLOGS</a></li>
+    <li><a href="">BLOGS</a></li>
     <li><a href="{% url 'joinus' %}">JOIN US</a></li>
-    <li><a href="{% url 'case' %}">CASE STUDIES</a></li>
+    <li><a href="">CASE STUDIES</a></li>
     <li><a href="home/#contact">CONTACT US</a></li>
   </ul>
 </div>
@@ -66,10 +66,12 @@
         <ul class="flex items-center gap-4 md:gap-7 justify-center w-full h-full">
           
           <li><a href="/home/#about" class="text-white min-[890px]:text-base text-sm font-medium font-Poppins leading-normal">ABOUT</a></li>
-          <li><a href="/home/#services" class="text-white min-[890px]:text-base text-sm font-medium font-Poppins leading-normal">SERVICES</a></li>
-          <li><a href="{% url 'blog' %}" class="{% if current_page == 'blog' %}bg-white text-black  min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">BLOGS</a></li>
+          <li><a href= "/home/#services" class="text-white min-[890px]:text-base text-sm font-medium font-Poppins leading-normal">SERVICES</a></li>
+          <li><a href="/home/#blog" class="text-white min-[890px]:text-base text-sm font-medium font-Poppins leading-normal">BLOGS</a></li>
+           <!-- <li> <a href="{% url 'blog' %}" class="{% if current_page == 'blog' %}bg-white text-black  min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">BLOGS</a></li>  -->
           <li><a href="{% url 'joinus' %}" class="{% if current_page == 'joinus' %}bg-white text-black min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">JOIN US</a></li>
-          <li><a href="{% url 'case' %}" class="{% if current_page == 'casestudies' %}bg-white text-black min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">CASE STUDIES</a></li>
+           <li><a href="/home/#case" class="text-white min-[890px]:text-base text-sm font-medium font-Poppins leading-normal">CASE STUDIES</a></li>
+          <!-- <li><a href="{% url 'case' %}" class="{% if current_page == 'casestudies' %}bg-white text-black min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">CASE STUDIES</a></li> -->
           <li><a href="/home/#contact" class="text-white text-base font-medium font-Poppins leading-normal whitespace-nowrap">CONTACT US</a></li>
           <li>
              <a href="{% url 'home' %}" class="flex shrink-0">
@@ -78,8 +80,7 @@
           </li>
         </ul>
 
-        <!-- Logo on right -->
-       
+  
       </div>
 
     </div>

@@ -1,5 +1,4 @@
 import os
-import re
 from django.utils.timezone import datetime
 from django.http import FileResponse, HttpResponse
 from django.shortcuts import get_object_or_404, render
@@ -24,29 +23,8 @@ def case(request):
     return render(request, 'myINT/caseStudies.html', {'blogs': blogs,'current_page': 'casestudies'})
 
 def joinus(request):
-    team_members = [
-        {
-            'name': 'David',
-            'role': 'CEO at iNT Solutions',
-            'image': 'myINT/images/David.png'
-        },
-        {
-            'name': 'Peter',
-            'role': 'CTO at iNT Solutions',
-            'image': 'myINT/images/peter.png'
-        },
-        {
-            'name': 'Rachel',
-            'role': 'Lead Designer',
-            'image': 'myINT/images/rachel.png'
-        },
-        {
-            'name': 'Ryan',
-            'role': 'Lead Developer',
-            'image': 'myINT/images/ryan.png'
-        }
-    ]
-    return render(request, 'myINT/joinUs.html', {'team_members': team_members, 'current_page': 'joinus'})
+    
+    return render(request, 'myINT/joinUs.html', { 'current_page': 'joinus'})
 
 def blog_detail(request, blog_id):
     # Get the current blog (with 404 if not found)
@@ -66,7 +44,6 @@ def blog_detail(request, blog_id):
         'blog': blog,
         'html_content': html_content,
         'related_blogs': related_blogs,
-        # Mark as safe for rendering HTML
     }
 
     return render(request, 'myINT/blogdetail.html', context)
