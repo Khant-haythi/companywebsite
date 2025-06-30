@@ -1,25 +1,41 @@
-<<<<<<< HEAD
-# companywebsite
-=======
-# Django Template
+## Prerequisites
 
-This sample repo contains the recommended structure for a Python Django project. In this sample, we use `django` to build a web application and the `unittest` to run tests.
+- Python 3.9 or higher installed
+- pip (Python package installer)
 
-For a more in-depth tutorial, see our [Django tutorial](https://code.visualstudio.com/docs/datascience/data-science-tutorial).
+---
 
-The code in this repo aims to follow Python style guidelines as outlined in [PEP 8](https://peps.python.org/pep-0008/).
+## Setup Instructions
 
-## Running the Sample
+### 1. Clone the repository
 
-To successfully run this example, we recommend the following VS Code extensions:
-- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
-- [Python Debugger](https://marketplace.visualstudio.com/items?itemName=ms-python.debugpy)
-- [Pylance](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) 
+git clone https://github.com/Khant-haythi/companywebsite.git
+cd your-repo
 
-- Open the template folder in VS Code (**File** > **Open Folder...**)
-- Create a Python virtual environment using the **Python: Create Environment** command found in the Command Palette (**View > Command Palette**). Ensure you install dependencies found in the `pyproject.toml` file
-- Ensure your newly created environment is selected using the **Python: Select Interpreter** command found in the Command Palette
-- Create and initialize the database by running `python manage.py migrate` in an activated terminal. 
-- Run the app using the Run and Debug view or by pressing `F5`
-- Run tests by running `python manage.py test` in an activated terminal
->>>>>>> 64ab0f8 (Initial commit)
+### 2. Create and activate a virtual environment
+
+On macOS/Linux:
+
+python3 -m venv venv
+source venv/bin/activate
+
+On Windows (PowerShell):
+
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+
+### 3. Install dependencies
+
+pip install -r requirements.txt
+
+### 4. Apply migrations
+
+python manage.py migrate
+
+### 5. Create a superuser (optional, for admin access)
+
+python manage.py createsuperuser
+
+### 6. Run the development server
+
+python manage.py runserver
