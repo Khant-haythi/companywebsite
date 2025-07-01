@@ -24,7 +24,7 @@ def case(request):
 
 def joinus(request):
     
-    return render(request, 'myINT/joinUs.html', { 'current_page': 'joinus'})
+    return render(request, 'myINT/joinus.html', { 'current_page': 'joinus'})
 
 def blog_detail(request, blog_id):
     # Get the current blog (with 404 if not found)

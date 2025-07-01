@@ -46,12 +46,13 @@
 
   <!-- Mobile Menu -->
   <ul id="mobile-menu" class="hidden md:hidden absolute top-[72px] left-4 right-4 z-50 bg-neutral-500/20 backdrop-blur-2xl mx-4 rounded-lg p-4 space-y-3 text-white font-medium font-poppins text-base ">
-    <li><a href="/home/#home">ABOUT</a></li>
+    <li><a href="{% url 'home' %}">HOME</a></li>
+    <li><a href="/home/#about">ABOUT</a></li>
     <li><a href="/home/#services">SERVICES</a></li>
-    <li><a href="">BLOGS</a></li>
+   <!--  <li><a href="">BLOGS</a></li> -->
     <li><a href="{% url 'joinus' %}">JOIN US</a></li>
-    <li><a href="">CASE STUDIES</a></li>
-    <li><a href="home/#contact">CONTACT US</a></li>
+   <!-- <li><a href="">CASE STUDIES</a></li> -->
+    <li><a href="/home/#contact">CONTACT US</a></li> 
   </ul>
 </div>
  
@@ -59,23 +60,22 @@
 <div class="hidden md:block z-50 relative">
  <div class="absolute inset-x-0 top-0 flex justify-end px-4 sm:px-6 md:px-15 lg:px-40 xl:px-48 mt-2 min-[880px]:mx-auto min-[900px]:mr-32 ">
 
-    <div class="max-w-[862px]  w-full h-14 bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl overflow-hidden mt-2" id="main-navbar">
+    <div class="max-w-[752px]  w-full h-14 bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl overflow-hidden mt-2" id="main-navbar">
 
        <div class="flex items-center gap-4 sm:gap-6 md:gap-7 pl-4 md:pl-12 h-full pr-4 md:pr-[55px]">
         <!-- Left Links -->
         <ul class="flex items-center gap-4 md:gap-7 justify-center w-full h-full">
           
-          <li><a href="/home/#about" class="text-white min-[890px]:text-base text-sm font-medium font-Poppins leading-normal">ABOUT</a></li>
-          <li><a href= "/home/#services" class="text-white min-[890px]:text-base text-sm font-medium font-Poppins leading-normal">SERVICES</a></li>
-          <li><a href="/home/#blog" class="text-white min-[890px]:text-base text-sm font-medium font-Poppins leading-normal">BLOGS</a></li>
+          <li><a href="{% url 'home' %}" class="text-white min-[890px]:text-base text-base font-medium font-Poppins leading-normal">HOME</a></li>
+          <li><a href="/home/#about" class="text-white min-[890px]:text-base text-base font-medium font-Poppins leading-normal">ABOUT</a></li>
+          <li><a href= "/home/#services" class="text-white min-[890px]:text-base text-base font-medium font-Poppins leading-normal">SERVICES</a></li>
            <!-- <li> <a href="{% url 'blog' %}" class="{% if current_page == 'blog' %}bg-white text-black  min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">BLOGS</a></li>  -->
           <li><a href="{% url 'joinus' %}" class="{% if current_page == 'joinus' %}bg-white text-black min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">JOIN US</a></li>
-           <li><a href="/home/#case" class="text-white min-[890px]:text-base text-sm font-medium font-Poppins leading-normal">CASE STUDIES</a></li>
           <!-- <li><a href="{% url 'case' %}" class="{% if current_page == 'casestudies' %}bg-white text-black min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">CASE STUDIES</a></li> -->
           <li><a href="/home/#contact" class="text-white text-base font-medium font-Poppins leading-normal whitespace-nowrap">CONTACT US</a></li>
           <li>
              <a href="{% url 'home' %}" class="flex shrink-0">
-          <img class="h-12 sm:h-14 md:h-14 lg:h-16 w-auto max-w-[112px] block" src="{% static 'myINT/images/intlogo.png' %}" alt="Logo" />
+          <img class="h-auto sm:h-14 md:h-14 lg:h-16 w-auto max-w-[112px] block" src="{% static 'myINT/images/intlogo.png' %}" alt="Logo" />
         </a>
           </li>
         </ul>
@@ -180,7 +180,7 @@
     <a href="{% url 'download_profile' %}" 
       class="text-white text-base font-medium font-Poppins underline hover:text-blue-300 flex flex-col items-start">
       <img src="{% static 'myINT/images/intmm_profile_qr_code.png' %}" alt="PDF Icon" class="w-28 h-28 mb-2">
-      Download Company Profile
+      Download Profile
     </a>
   </div>
 
