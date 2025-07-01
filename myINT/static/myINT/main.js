@@ -87,24 +87,24 @@ const searchInput = document.getElementById("search-input");
   });
 
  
-   //new Load More Button functionality
-  let currentVisible = 4;
+  //  //new Load More Button functionality
+  // let currentVisible = 4;
 
-  document.getElementById("new-load-more-btn").addEventListener("click", function () {
-    const cards = document.querySelectorAll(".blog-card");
+  // document.getElementById("new-load-more-btn").addEventListener("click", function () {
+  //   const cards = document.querySelectorAll(".blog-card");
     
-    // Show next 4 cards
-    for (let i = currentVisible; i < Math.min(currentVisible + 4, cards.length); i++) {
-      cards[i].classList.remove("hidden");
-    }
+  //   // Show next 4 cards
+  //   for (let i = currentVisible; i < Math.min(currentVisible + 4, cards.length); i++) {
+  //     cards[i].classList.remove("hidden");
+  //   }
 
-    currentVisible += 4;
+  //   currentVisible += 4;
 
-    // Optional: Hide button when all cards are shown
-    if (currentVisible >= cards.length) {
-      this.style.display = "none";
-    }
-  });
+  //   // Optional: Hide button when all cards are shown
+  //   if (currentVisible >= cards.length) {
+  //     this.style.display = "none";
+  //   }
+  // });
 
     //Dropdown functionality
   const dropdownButton = document.getElementById('dropdownButton');
@@ -118,6 +118,7 @@ const searchInput = document.getElementById("search-input");
   document.querySelectorAll('.dropdown-item').forEach(item => {
     item.addEventListener('click', () => {
       selectedOption.textContent = item.textContent;
+      categoryInput.value = selectedOption.textContent;
       dropdownMenu.classList.add('hidden');
     });
   });
@@ -135,4 +136,15 @@ const searchInput = document.getElementById("search-input");
     link.classList.add('active-case-studies');
   });
 });
+
+//success message auto-hide
+const successMessage = document.querySelector('.text-green-600');
+    if (successMessage) {
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 10000); // Hide after 10 seconds
+    }
+
+
+    
 })

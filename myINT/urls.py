@@ -15,6 +15,7 @@ urlpatterns = [
     path('joinus/', views.joinus, name='joinus'),
     path('blogs/<int:blog_id>/', views.blog_detail, name='blog_detail'),
     path('profile.pdf', views.download_company_profile, name='download_profile'),
+    path('contact/', views.contact_us, name='contact_us'),
     
 ]
 

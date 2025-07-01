@@ -1,4 +1,6 @@
 import os
+from django.contrib import messages
+from django.urls import reverse
 from django.utils.timezone import datetime
 from django.http import FileResponse, HttpResponse
 from django.shortcuts import get_object_or_404, render
@@ -9,6 +11,7 @@ from myINT.models import Blog, Category
 from django.views.generic import ListView
 import markdown
 from django.utils.safestring import mark_safe
+from django.core.mail import send_mail
 
 def index(request):
     blogs = Blog.objects.all()
@@ -51,3 +54,38 @@ def blog_detail(request, blog_id):
 def download_company_profile(request):
     file_path = os.path.join(os.path.dirname(__file__), 'ints-profile.pdf')
     return FileResponse(open(file_path, 'rb'), content_type='application/pdf')
+
+def contact_us(request):
+    context = {}
+    if request.method == "POST":
+        name = request.POST.get('name')
+        company = request.POST.get('company')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        category = request.POST.get('category')
+        message = request.POST.get('message')
+
+        full_message = f"""
+New Contact Message
+
+Name: {name}
+Company: {company}
+Email: {email}
+Phone: {phone}
+Category: {category}
+Message: {message}
+        """
+
+        send_mail(
+            subject=f"New Contact Us Message from {name}",
+            message=full_message,
+            from_email="mei257766@gmail.com",  # ✅ Your actual Gmail
+            recipient_list=["mei257766@gmail.com"],   # Or your dev email for testing
+            fail_silently=False,
+        )
+
+        # Add success message to context
+        messages.success(request, "✅ Your message has been sent successfully.")
+        url = reverse('home') + '#contact'
+        return redirect(url)
+    return render(request, "myINT/home.html", context)  # Or whatever your template is called
