@@ -13,6 +13,8 @@ import markdown
 from django.utils.safestring import mark_safe
 from django.core.mail import send_mail
 
+from web_django import settings
+
 def index(request):
     blogs = Blog.objects.all()
     return render(request, "myINT/home.html", {'blogs': blogs})
@@ -79,8 +81,8 @@ Message: {message}
         send_mail(
             subject=f"New Contact Us Message from {name}",
             message=full_message,
-            from_email="mei257766@gmail.com",  # ✅ Your actual Gmail
-            recipient_list=["mei257766@gmail.com"],   # Or your dev email for testing
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=settings.CONTACT_US_EMAIL_RECIPIENTS, 
             fail_silently=False,
         )
 
@@ -88,4 +90,4 @@ Message: {message}
         messages.success(request, "✅ Your message has been sent successfully.")
         url = reverse('home') + '#contact'
         return redirect(url)
-    return render(request, "myINT/home.html", context)  # Or whatever your template is called
+    return render(request, "myINT/home.html", context)  
