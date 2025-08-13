@@ -1,6 +1,5 @@
 {% extends "myINT/layout.html" %}
 
-
 {% block title %}Home Page{% endblock %}
 {% load static %}
 
@@ -25,6 +24,8 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+
 
 </style>
 
@@ -58,18 +59,26 @@
   </div>
 
   <!-- Scrollable Logo Container aligned left -->
-  <div class="w-full overflow-x-auto">
-    <div class="flex items-center gap-6 px-5 py-1 bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl w-fit justify-center mx-auto">
-      <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Dell_EMC_logo.svg.svg' %}" alt="Dell EMC" />
-      <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Juniper_Networks-Logo.wine.svg' %}" alt="Juniper" />
-      <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Veritas_Technologies_logo.svg.svg' %}" alt="Veritas" />
-      <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/Nutanix-Logo.wine.svg' %}" alt="Nutanix" />
-      <img class="w-24 h-16 flex-shrink-0" src="{% static 'myINT/images/PaloAltoNetworks_2020_Logo.svg.svg' %}" alt="Palo Alto Networks" />
-    </div>
-  </div>
+<div
+    x-data="{}"
+    x-init="$nextTick(() => {
+        let ul = $refs.logos;
+        ul.insertAdjacentHTML('afterend', ul.outerHTML);
+        ul.nextSibling.setAttribute('aria-hidden', 'true');
+    })"
+    class="w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] mx-auto flex flex-nowrap overflow-hidden 
+            bg-neutral-500/20 rounded-[50px] backdrop-blur-2xl py-2"
+>
+    <ul x-ref="logos" class="flex items-center justify-center [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+        <li><img class="w-auto h-16 flex-shrink-0" src="{% static 'myINT/images/Dell_EMC_logo.svg.svg' %}" alt="Dell EMC" /></li>
+        <li><img class="w-auto h-16 flex-shrink-0" src="{% static 'myINT/images/Juniper_Networks-Logo.wine.svg' %}" alt="Juniper" /></li>
+        <li><img class="w-auto h-16 flex-shrink-0" src="{% static 'myINT/images/Veritas_Technologies_logo.svg.svg' %}" alt="Veritas" /></li>
+        <li><img class="w-auto h-16 flex-shrink-0" src="{% static 'myINT/images/Nutanix-Logo.wine.svg' %}" alt="Nutanix" /></li>
+        <li><img class="w-auto h-16 flex-shrink-0" src="{% static 'myINT/images/PaloAltoNetworks_2020_Logo.svg.svg' %}" alt="Palo Alto Networks" /></li>
+    </ul>                
 </div>
 
-
+</div>
 
 <div class="prose prose-invert max-w-none">
     <!-- Home Section -->
@@ -176,7 +185,7 @@
     <div class="w-full max-w-[480px] mx-auto h-[3px] bg-gradient-to-r from-sky-100 via-sky-800 to-sky-100"></div>
 
     <!-- Services Grid -->
-    <div class="grid grid-cols-1 [@media(width:540px)]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 mt-10">
+    <div class="grid grid-cols-1 [@media(width:540px)]:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 mt-10 items-stretch ">
 
 
       <!-- Service Card 1: Networking & Computing -->
@@ -186,9 +195,9 @@
         </div>
         <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Networking & Computing</div>
         <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
-          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+          iNT solutions are designed to relieve the burden of IT network administration and give your organization more time to focus on running your business.
         </div>
-        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer mt-auto">
           <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
           <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
         </div>
@@ -202,9 +211,9 @@
         </div>
         <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Cyber Security Solutions</div>
         <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
-          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+          Our Security solutions help customers protect their organizations data against network breaches and threats.
         </div>
-        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer mt-auto">
           <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
           <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
         </div>
@@ -218,9 +227,10 @@
         </div>
         <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Cloud & Data Center</div>
         <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
-          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+          End-to-end managed Cloud and Infrastructure solutions to support your business needs both now and into the future.
+                    
         </div>
-        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer mt-auto">
           <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
           <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
         </div>
@@ -232,11 +242,11 @@
         <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px] flex justify-center items-center">
            <img class="w-56 h-40  shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25),_-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="/static/myINT/images/app.svg" alt="Application Solutions" />
         </div>
-        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Application Solutions</div>
+        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Hardware & Accessories</div>
         <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
-          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+          Sourcing cost saving and reliable IT products and accessories for small, medium and large enterprises.
         </div>
-        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer mt-auto">
           <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
           <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
         </div>
@@ -244,15 +254,15 @@
       </div>
 
       <!-- Service Card 5: Business Communication -->
-      <div class=" w-full relative flex flex-col justify-start items-start gap-5">
+      <div class=" w-full relative flex flex-col justify-start items-start gap-y-10">
         <div class="self-stretch h-60 rounded-[30px] border-2 border-slate-900 backdrop-blur-[10px] flex justify-center items-center">
           <img class="w-44 h-40  shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25),_-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="/static/myINT/images/bc.svg" alt="Business Communication" />
         </div>
-        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Business Communication</div>
-        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
-          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+        <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-snug ">Managed Service &<br/> Maintenance Support</div>
+        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal min-h-[100px]">
+          Fully Managed Service & 24x7 iNT Support Service for keeping your business as always operational, seamlessly.
         </div>
-        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer mt-auto">
           <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
           <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
         </div>
@@ -265,10 +275,10 @@
            <img class="w-44 h-40  shadow-[2px_2px_4px_0px_rgba(255,255,255,0.25),_-2px_-2px_4px_0px_rgba(255,255,255,0.25)]" src="/static/myINT/images/bc.svg" alt="Business Communication" />
         </div>
         <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Business Communication</div>
-        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
-          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+        <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-snug min-h-[96px]">
+          iNT offers enterprise level, it-for-purpose Collaboration & Communication solutions designed with connectivity in mind.
         </div>
-        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer mt-auto">
           <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
           <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
         </div>
@@ -282,9 +292,9 @@
         </div>
         <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Strategy & Consulting</div>
         <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
-          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+          Through our team of experienced IT engineers and project managers, we offer a range of customized consulting services for small, medium and large enterprises.
         </div>
-        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer mt-auto">
           <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
           <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
         </div>
@@ -298,9 +308,11 @@
         </div>
         <div class="text-zinc-900 text-xl font-semibold font-Poppins leading-10">Application Solutions</div>
         <div class="text-zinc-900/80 text-base font-normal font-Poppins leading-normal">
-          Reliable, scalable network and computing solutions that power seamless connectivity and business performance
+          
+          Leverage technology and maximize your applications to fit your organization needs both now and into the future.
+                    
         </div>
-        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer">
+        <div class="inline-flex justify-start items-center gap-2.5 cursor-pointer mt-auto">
           <span class="text-zinc-900 text-base font-medium font-Poppins leading-10">Learn more</span>
           <img class="w-2 h-3" src="/static/myINT/images/vector.svg" alt="Arrow Right" />
         </div>
@@ -458,7 +470,6 @@
 </section>
 
 <!-- BLOGS SECTION -->
-<!--
 <section class="px-4 py-10 max-w-screen-xl mx-auto">
   
   <div class="text-center">
@@ -485,7 +496,7 @@
         <p class="mt-2">{{ blog.created_at }}</p>
         <div class="flex items-center gap-2">
           <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-          <p>7.8k</p>
+          <p>{{ blog.view_count }}</p>
         </div>
       </div>
        <a href="{% url 'blog_detail' blog.id %}">
@@ -509,7 +520,7 @@
         <p class="mt-2">{{ blog.created_at }}</p>
         <div class="flex items-center gap-2">
           <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-          <p>7.8k</p>
+          <p>{{ blog.view_count }}</p>
         </div>
       </div>
        <a href="{% url 'blog_detail' blog.id %}">
@@ -522,14 +533,13 @@
     {% endif %}
 {% endfor %}
 
-
     </div>
   </div>
 
   <div id="new-load-more-btn" class="mt-10 px-10 py-3 mx-auto  max-w-max rounded-[50px] outline outline-1 outline-offset-[-1px] outline-zinc-900 justify-center cursor-pointer">
     <div class="text-zinc-900 text-xl font-normal font-Poppins">Load More Article</div>
   </div>
-</section> -->
+</section> 
 
 
 

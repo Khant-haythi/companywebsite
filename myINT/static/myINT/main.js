@@ -1,11 +1,48 @@
 document.addEventListener('DOMContentLoaded', function () {
   //   // Load more articles
-  // document.getElementById('load-more-btn').addEventListener('click', function () {
-  //   const hiddenArticles = document.getElementById('hidden-articles');
-  //   const btn = this;
-  //   hiddenArticles.style.display = 'contents'; // or 'grid' / 'flex'
-  //   btn.style.display = 'none';
-  // });
+ //  //new Load More Button functionality
+  let currentVisible = 4;
+
+  document.getElementById("new-load-more-btn").addEventListener("click", function () {
+    const cards = document.querySelectorAll(".blog-card");
+    
+    // Show next 4 cards
+    for (let i = currentVisible; i < Math.min(currentVisible + 4, cards.length); i++) {
+      cards[i].classList.remove("hidden");
+    }
+
+    currentVisible += 4;
+
+    // Optional: Hide button when all cards are shown
+    if (currentVisible >= cards.length) {
+      this.style.display = "none";
+    }
+  });
+
+  const scroller = document.getElementById('logoScroller');
+  let scrollAmount = 0;
+  const speed = 1; // Pixels per frame, adjust for speed
+  const totalWidth = scroller.scrollWidth / 2; // Half the width due to duplication
+
+  function scrollLogos() {
+    scrollAmount -= speed;
+    if (Math.abs(scrollAmount) >= totalWidth) {
+      scrollAmount = 0; // Reset to start for seamless loop
+    }
+    scroller.style.transform = `translateX(${scrollAmount}px)`;
+    requestAnimationFrame(scrollLogos);
+  }
+
+  // Start scrolling
+  scrollLogos();
+
+  // Pause on hover
+  scroller.addEventListener('mouseenter', () => {
+    scroller.style.animationPlayState = 'paused';
+  });
+  scroller.addEventListener('mouseleave', () => {
+    scrollLogos();
+  });
 
   // ================
   // SEARCH FUNCTION
@@ -87,24 +124,7 @@ const searchInput = document.getElementById("search-input");
   });
 
  
-  //  //new Load More Button functionality
-  // let currentVisible = 4;
-
-  // document.getElementById("new-load-more-btn").addEventListener("click", function () {
-  //   const cards = document.querySelectorAll(".blog-card");
-    
-  //   // Show next 4 cards
-  //   for (let i = currentVisible; i < Math.min(currentVisible + 4, cards.length); i++) {
-  //     cards[i].classList.remove("hidden");
-  //   }
-
-  //   currentVisible += 4;
-
-  //   // Optional: Hide button when all cards are shown
-  //   if (currentVisible >= cards.length) {
-  //     this.style.display = "none";
-  //   }
-  // });
+  
 
     //Dropdown functionality
   const dropdownButton = document.getElementById('dropdownButton');

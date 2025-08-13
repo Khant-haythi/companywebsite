@@ -35,6 +35,10 @@ def blog_detail(request, blog_id):
     # Get the current blog (with 404 if not found)
     blog = get_object_or_404(Blog, id=blog_id)
 
+    # Increment view count
+    blog.view_count += 1
+    blog.save(update_fields=['view_count'])
+    print(f"View count incremented to: {blog.view_count}")
     # Convert Markdown content to HTML
     content_with_image = blog.content.replace("$BLOG_IMAGE_URL$", blog.image.url)
     # Replace placeholder in Markdown with actual image URL

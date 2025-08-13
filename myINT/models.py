@@ -35,6 +35,7 @@ class Blog(models.Model):
     image = models.FileField(upload_to='blog_images/', blank=True, null=True)
     tags = models.ManyToManyField('Tag', related_name='blogs')
     created_at = models.DateTimeField(auto_now_add=True)
+    view_count = models.PositiveIntegerField(default=0)
     
    
     def serialize(self):
@@ -44,4 +45,5 @@ class Blog(models.Model):
             'content': self.content,
             'categories': self.categories.name if self.categories else None,
             'image': self.image.url if self.image else None,
+            'view_count': self.view_count,
         }

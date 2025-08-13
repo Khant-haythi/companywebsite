@@ -64,11 +64,13 @@
 }
 
 .markdown-content img {
-  max-width: 100%;
-  height: auto;
   display: block;
-  margin: 1rem 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; 
+  height: auto;
 }
+
 
 .markdown-content blockquote {
   border-left: 4px solid #ccc;
@@ -135,7 +137,7 @@
 </div>
 
 <!-- Blogs For You Section -->
-<div class="justify-start text-black text-2xl font-bold font-['Poppins'] leading-normal">Blogs For You</div>
+<div class="justify-start text-black text-3xl font-bold font-['Poppins'] leading-normal">Blogs For You</div>
 <div class="related-blogs grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
   {% for related_blog in related_blogs %}
     <div class="blog-card flex flex-col gap-4">
@@ -148,7 +150,7 @@
         <p class="mt-2">{{ related_blog.published_date }}</p>
         <div class="flex items-center gap-2">
           <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-          <p>7.8k</p>
+          <p>{{ related_blog.view_count }}</p>
         </div>
       </div>
       <a href="{% url 'blog_detail' related_blog.id %}">

@@ -70,7 +70,7 @@
         <p class="mt-2">{{ blog.created_at }}</p>
         <div class="flex items-center gap-2">
           <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-          <p>7.8k</p>
+          <p>{{ blog.view_count }}</p>
         </div>
       </div>
        <a href="{% url 'blog_detail' blog.id %}">
@@ -94,7 +94,7 @@
         <p class="mt-2">{{ blog.created_at }}</p>
         <div class="flex items-center gap-2">
           <img class="w-5 h-3" src="{% static 'myINT/images/eye.svg' %}" />
-          <p>7.8k</p>
+          <p>{{ blog.view_count }}</p>
         </div>
       </div>
        <a href="{% url 'blog_detail' blog.id %}">
@@ -106,8 +106,6 @@
     {% endif %}
     {% endif %}
 {% endfor %}
-
-
     </div>
   </div>
 

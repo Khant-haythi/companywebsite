@@ -8,13 +8,29 @@
     <link rel="stylesheet" href="{% static 'myINT/site.css' %}">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Bootstrap JS (with Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script> 
+    <script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        animation: {
+          'infinite-scroll': 'infinite-scroll 15s linear infinite',
+        },
+        keyframes: {
+          'infinite-scroll': {
+            from: { transform: 'translateX(0)' },
+            to: { transform: 'translateX(-100%)' },
+          }
+        }                    
+      },
+    },
+  }
+</script>
     <!-- layout.html -->
     <script src="//unpkg.com/alpinejs" defer></script>
-    <script src="{% static 'myINT/main.js' %}"></script>
+    <script src="{% static 'myINT/main.js' %}" defer></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body >
@@ -49,7 +65,7 @@
     <li><a href="{% url 'home' %}">HOME</a></li>
     <li><a href="/home/#about">ABOUT</a></li>
     <li><a href="/home/#services">SERVICES</a></li>
-   <!--  <li><a href="">BLOGS</a></li> -->
+    <li><a href="{% url 'blog' %}">BLOGS</a></li>
     <li><a href="{% url 'joinus' %}">JOIN US</a></li>
    <!-- <li><a href="">CASE STUDIES</a></li> -->
     <li><a href="/home/#contact">CONTACT US</a></li> 
@@ -69,7 +85,7 @@
           <li><a href="{% url 'home' %}" class="text-white min-[890px]:text-base text-base font-medium font-Poppins leading-normal">HOME</a></li>
           <li><a href="/home/#about" class="text-white min-[890px]:text-base text-base font-medium font-Poppins leading-normal">ABOUT</a></li>
           <li><a href= "/home/#services" class="text-white min-[890px]:text-base text-base font-medium font-Poppins leading-normal">SERVICES</a></li>
-           <!-- <li> <a href="{% url 'blog' %}" class="{% if current_page == 'blog' %}bg-white text-black  min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">BLOGS</a></li>  -->
+           <li> <a href="{% url 'blog' %}" class="{% if current_page == 'blog' %}bg-white text-black  min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">BLOGS</a></li> 
           <li><a href="{% url 'joinus' %}" class="{% if current_page == 'joinus' %}bg-white text-black min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">JOIN US</a></li>
           <!-- <li><a href="{% url 'case' %}" class="{% if current_page == 'casestudies' %}bg-white text-black min-[900px]:px-3 py-2 rounded-[50px]{% else %}text-white{% endif %} min-[890px]:text-base text-sm font-medium font-Poppins leading-normal whitespace-nowrap nav-link">CASE STUDIES</a></li> -->
           <li><a href="/home/#contact" class="text-white text-base font-medium font-Poppins leading-normal whitespace-nowrap">CONTACT US</a></li>
